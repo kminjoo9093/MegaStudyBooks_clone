@@ -1,0 +1,16 @@
+{
+  "name": "megastudybooks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass scss:css --watch",
+    "build": "sass scss:build --style=compressed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "sass": "^1.85.1"
+  }
+}
