@@ -1,0 +1,84 @@
+@use "../abstracts/" as *;
+@use "../layout/" as *;
+
+/************** HEADER : main header *************/
+.header-inner {
+  display: flex;
+  flex-direction: column;
+}
+.main-header {
+  order: 2;
+}
+.main-header-inner {
+  @extend .pad30;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .logo {
+    width: 17.9rem;
+    @include screenWidth($tablet) {
+      width: 14.3rem;
+    }
+    a {
+      display: inline-block;
+      width: 100%;
+      height: auto;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .nav-icons {
+    @include screenWidth($tablet) {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .page-nav {
+    flex: 1;
+    margin-right: calc(var(--logo_width) - var(--btn-menu_width));
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5.2rem;
+    }
+    a {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    @include screenWidth($tablet) {
+      display: none;
+    }
+  }
+}
+
+/************** HEADER : utility *************/
+.utility {
+  border-bottom: 0.1rem solid $gray_cf;
+  &-inner {
+    @extend .pad30;
+    padding-block: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  }
+  .search-form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    input {
+      width: 20.5rem;
+      height: 3.6rem;
+      padding-inline: 1.6rem;
+      border-radius: 3.6rem;
+      border: 0.1rem solid $gray_cf;
+    }
+  }
+
+  @include screenWidth($tablet) {
+    display: none;
+  }
+}

@@ -1,0 +1,48 @@
+@use "../abstracts/" as *;
+
+.utility{
+  .search-form{
+    $parent: "search-form";
+    button{
+      @include searchBtn($parent, 3.6rem, 3.6rem);
+      border-radius: 50%;
+    }
+  }
+  .my-page{
+    @include myPageBtn;
+    @include screenWidth($tablet){
+      display: none;
+    }
+  }
+}
+
+.nav-icons{
+  .btn-menu{
+    width: 2.4rem;
+    height: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    span{
+      height: .2rem;
+      background-color: $gray_11;
+    }
+    @include screenWidth($tablet){
+      margin-left: 2rem;
+    }
+  }
+  $parent: "nav-icons";
+  .search-btn{
+    display: none;
+    @include screenWidth($tablet){
+      @include searchBtn($parent, 2.2rem, 2.2rem);
+      display: block;
+    }
+  }
+  .my-page{
+    display: none;
+    @include screenWidth($tablet){
+      @include myPageBtn;
+    }
+  }
+}
