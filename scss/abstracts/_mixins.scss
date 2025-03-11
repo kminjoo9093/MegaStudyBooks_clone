@@ -1,11 +1,5 @@
 @use "./vars" as *;
 
-@mixin screenWidth($width) {
-  @media (max-width: $width) {
-    @content;
-  }
-}
-
 @mixin myPageBtn{
   display: inline-block;
   width: 2.4rem;
@@ -24,3 +18,11 @@
   height: $height;
   @content;
 }
+
+// responsive
+@mixin screenWidth($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+// responsive

@@ -8,7 +8,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.4rem;
+  line-height: 1.4em;
   color: #111;
 }
 
@@ -145,8 +145,18 @@ img {
 .pad30, .main-header-inner, .utility-inner {
   padding-inline: 3rem;
 }
+@media (max-width: 990px) {
+  .pad30, .main-header-inner, .utility-inner {
+    padding-inline: 2rem;
+  }
+}
 
 /************** HEADER : main header *************/
+header {
+  position: fixed;
+  inset: 0 0 auto 0;
+}
+
 .header-inner {
   display: flex;
   flex-direction: column;
@@ -206,7 +216,7 @@ img {
 
 /************** HEADER : utility *************/
 .utility {
-  border-bottom: 0.1rem solid #CFCFCF;
+  border-bottom: 0.1rem solid #E5E5E5;
 }
 .utility-inner {
   padding-block: 0.5rem;
@@ -226,9 +236,74 @@ img {
   border-radius: 3.6rem;
   border: 0.1rem solid #CFCFCF;
 }
+.utility .search-form input::placeholder {
+  font-size: 1.6rem;
+}
 @media (max-width: 990px) {
   .utility {
     display: none;
+  }
+}
+
+/************** HEADER : GNB *************/
+.gnb {
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  border-top: 0.1rem solid #E5E5E5;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: 0.4s;
+}
+header.open .gnb {
+  opacity: 1;
+  visibility: visible;
+}
+.gnb-wrap {
+  padding-inline: 1rem;
+  padding-block: 4rem;
+  display: flex;
+}
+.gnb-col {
+  flex: 1;
+  padding-inline: 2rem;
+}
+.gnb-col h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.5em;
+  display: inline-block;
+  padding-right: 2rem;
+  background: url(../../images/icon_chevron_R.svg) no-repeat center right/1.6rem auto;
+}
+.gnb-col ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+.gnb-col ul li {
+  margin-top: 1rem;
+  text-wrap: nowrap;
+}
+.gnb-col ul a {
+  font-size: 1.6rem;
+  color: #666666;
+}
+.gnb-col + .gnb-col {
+  border-left: 0.1rem solid #E5E5E5;
+}
+@media (max-width: 990px) {
+  .gnb {
+    height: 100vh;
+  }
+  .gnb-wrap {
+    flex-direction: column;
+    gap: 3rem;
+    padding-inline: 0;
+  }
+  .gnb .gnb-col {
+    border: none;
+  }
+  .gnb .gnb-col ul {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -254,24 +329,46 @@ img {
 .nav-icons .btn-menu {
   width: 2.4rem;
   height: 1.6rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  position: relative;
 }
 .nav-icons .btn-menu span {
+  width: 100%;
   height: 0.2rem;
   background-color: #111;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.4s;
+}
+.nav-icons .btn-menu span:first-child {
+  top: 0;
+}
+.nav-icons .btn-menu span:last-child {
+  top: 100%;
+}
+header.open .nav-icons .btn-menu span:first-child {
+  transform: rotate(45deg);
+  top: 50%;
+}
+header.open .nav-icons .btn-menu span:nth-child(2) {
+  opacity: 0;
+  visibility: hidden;
+}
+header.open .nav-icons .btn-menu span:last-child {
+  transform: rotate(-45deg);
+  top: 50%;
 }
 @media (max-width: 990px) {
   .nav-icons .btn-menu {
     margin-left: 2rem;
   }
 }
-.nav-icons .search-btn {
+.nav-icons .btn-search {
   display: none;
 }
 @media (max-width: 990px) {
-  .nav-icons .search-btn {
+  .nav-icons .btn-search {
     background: url(../../images/icon_search_blk.svg) no-repeat center/100% auto;
     width: 2.2rem;
     height: 2.2rem;

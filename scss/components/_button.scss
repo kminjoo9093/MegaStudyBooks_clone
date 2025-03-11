@@ -1,47 +1,71 @@
 @use "../abstracts/" as *;
 
-.utility{
-  .search-form{
+.utility {
+  .search-form {
     $parent: "search-form";
-    button{
+    button {
       @include searchBtn($parent, 3.6rem, 3.6rem);
       border-radius: 50%;
     }
   }
-  .my-page{
+  .my-page {
     @include myPageBtn;
-    @include screenWidth($tablet){
+    @include screenWidth($tablet) {
       display: none;
     }
   }
 }
 
-.nav-icons{
-  .btn-menu{
+.nav-icons {
+  .btn-menu {
     width: 2.4rem;
     height: 1.6rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    span{
-      height: .2rem;
+    position: relative;
+    span {
+      width: 100%;
+      height: 0.2rem;
       background-color: $gray_11;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: 0.4s;
+      &:first-child{
+        top: 0;
+      }
+      &:last-child{
+        top: 100%;
+      }
     }
-    @include screenWidth($tablet){
+    header.open &{
+      span:first-child{
+        transform: rotate(45deg);
+        top: 50%;
+      }
+      span:nth-child(2) {
+        opacity: 0;
+        visibility: hidden;
+      }
+      span:last-child{
+        transform: rotate(-45deg);
+        top: 50%;
+      }
+    }
+    @include screenWidth($tablet) {
       margin-left: 2rem;
     }
   }
   $parent: "nav-icons";
-  .search-btn{
+  .btn-search {
     display: none;
-    @include screenWidth($tablet){
+    @include screenWidth($tablet) {
       @include searchBtn($parent, 2.2rem, 2.2rem);
       display: block;
     }
   }
-  .my-page{
+  .my-page {
     display: none;
-    @include screenWidth($tablet){
+    @include screenWidth($tablet) {
       @include myPageBtn;
     }
   }
