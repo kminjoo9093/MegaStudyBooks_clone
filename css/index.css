@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css");
 /* 폰트 초기화 */
 html {
   font-size: 62.5%;
@@ -137,16 +138,20 @@ img {
 
 /*********** color ***********/
 /*********** responsive ***********/
+#container {
+  margin-top: var(--headerHeight, 10.5rem);
+}
+
 .web-center {
   max-width: 150rem;
   margin: 0 auto;
 }
 
-.pad30, .main-header-inner, .utility-inner {
+.padInline, .main-header-inner, .utility-inner {
   padding-inline: 3rem;
 }
 @media (max-width: 990px) {
-  .pad30, .main-header-inner, .utility-inner {
+  .padInline, .main-header-inner, .utility-inner {
     padding-inline: 2rem;
   }
 }
@@ -386,6 +391,65 @@ header.open .nav-icons .btn-menu span:last-child {
     background: url(../../images/icon_my.svg) no-repeat center/2.4rem auto;
     margin-left: 2rem;
   }
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  position: static;
+  background: #fff url(../../images/icon_chevron_R.svg) no-repeat center/1.6rem auto;
+}
+.swiper .swiper-button-prev {
+  transform: rotate(180deg) translateX(50%);
+}
+.swiper .swiper-button-next {
+  transform: rotate(0) translateX(50%);
+}
+
+#visual .swiper {
+  position: relative;
+}
+#visual .swiper-controls {
+  border: 1px solid blue;
+  width: var(--content-width, 144rem);
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#visual .swiper-button-wrap {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+#visual .swiper-pagination {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  left: auto;
+  width: 6rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 1.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+#visual .swiper-pagination span {
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1.8em;
+  vertical-align: middle;
+  margin-inline: 0.3rem;
+}
+#visual .swiper .swiper-button-prev:after,
+#visual .swiper .swiper-button-next:after {
+  content: "";
 }
 
 /*# sourceMappingURL=index.css.map */

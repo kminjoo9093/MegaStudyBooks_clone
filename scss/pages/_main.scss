@@ -2,7 +2,7 @@
 @use "../layout/" as *;
 
 /************** HEADER : main header *************/
-header{
+header {
   position: fixed;
   inset: 0 0 auto 0;
 }
@@ -14,7 +14,7 @@ header{
   order: 2;
 }
 .main-header-inner {
-  @extend .pad30;
+  @extend .padInline;
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -63,7 +63,7 @@ header{
 .utility {
   border-bottom: 0.1rem solid $gray_e5;
   &-inner {
-    @extend .pad30;
+    @extend .padInline;
     padding-block: 0.5rem;
     display: flex;
     align-items: center;
@@ -90,62 +90,64 @@ header{
   }
 }
 /************** HEADER : GNB *************/
-.gnb{
+.gnb {
   opacity: 0;
   visibility: hidden;
   width: 100%;
   border-top: 0.1rem solid $gray_e5;
   box-shadow: 0 0.5rem 1rem rgba($color: #000000, $alpha: 0.1);
   transition: 0.4s;
-  header.open &{
+  header.open & {
     opacity: 1;
     visibility: visible;
   }
-  &-wrap{
+  &-wrap {
     padding-inline: 1rem;
     padding-block: 4rem;
     display: flex;
   }
-  &-col{
+  &-col {
     flex: 1;
     padding-inline: 2rem;
-    h2{
+    h2 {
       font-size: 1.8rem;
       font-weight: 700;
       line-height: 1.5em;
       display: inline-block;
       padding-right: 2rem;
-      background: url(../../images/icon_chevron_R.svg) no-repeat center right / 1.6rem auto;
+      background: url(../../images/icon_chevron_R.svg) no-repeat center right /
+        1.6rem auto;
     }
-    ul{
+    ul {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      li{
+      li {
         // min-width: calc(100% / 3);
         margin-top: 1rem;
         text-wrap: nowrap;
       }
-      a{
+      a {
         font-size: 1.6rem;
         color: $gray_66;
-      } 
+      }
     }
   }
-  &-col + .gnb-col{
+  &-col + .gnb-col {
     border-left: 0.1rem solid $gray_e5;
   }
+
   // responsive gnb
-  @include screenWidth($tablet){
+  @include screenWidth($tablet) {
     // gnb
     height: 100vh;
-    &-wrap{
+    &-wrap {
       flex-direction: column;
       gap: 3rem;
       padding-inline: 0;
     }
-    .gnb-col{
+    .gnb-col {
       border: none;
-      ul{
+      ul {
         grid-template-columns: repeat(2, 1fr);
       }
     }

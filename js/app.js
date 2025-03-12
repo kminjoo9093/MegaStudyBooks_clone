@@ -1,4 +1,7 @@
-import {handleMenuBtn} from "./ui/gnb.js";
+import {HeaderHeight} from "./ui/Header.js";
+import {HandleMenuBtn} from "./ui/Gnb.js";
+import {VisualSlide} from "./ui/Slide.js";
 
-handleMenuBtn();
-// handleGnbColHeight();
+HeaderHeight();
+HandleMenuBtn();
+VisualSlide();

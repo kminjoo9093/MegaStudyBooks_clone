@@ -15,87 +15,110 @@
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
-    <header class="open">
-      <div class="header-inner">
-        <div class="main-header">
-          <div class="main-header-inner web-center">
-            <h1 class="logo">
-              <a href="#"
-                ><img src="./images/logo.svg" alt="메가스터디북스"
-              /></a>
-            </h1>
-            <nav class="page-nav">
+    <div id="container">
+      <header>
+        <div class="header-inner">
+          <div class="main-header">
+            <div class="main-header-inner web-center">
+              <h1 class="logo">
+                <a href="#"
+                  ><img src="./images/logo.svg" alt="메가스터디북스"
+                /></a>
+              </h1>
+              <nav class="page-nav">
+                <ul>
+                  <li><a href="#">초등</a></li>
+                  <li><a href="#">중등</a></li>
+                  <li><a href="#">고등</a></li>
+                  <li><a href="#">단행본</a></li>
+                </ul>
+              </nav>
+              <p class="nav-icons">
+                <button class="btn-search"></button>
+                <a href="#" class="my-page" aria-label="마이페이지"></a>
+                <button class="btn-menu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </p>
+            </div>
+          </div>
+          <div class="utility">
+            <div class="utility-inner web-center">
+              <form class="search-form">
+                <input type="text" placeholder="검색어 입력" />
+                <button href="#" aria-label="검색"></button>
+              </form>
+              <a href="#" class="my-page" aria-label="마이페이지"></a>
+            </div>
+          </div>
+        </div>
+        <nav class="gnb">
+          <div class="gnb-wrap web-center">
+            <div class="gnb-col">
+              <h2><a href="#">도서</a></h2>
               <ul>
                 <li><a href="#">초등</a></li>
                 <li><a href="#">중등</a></li>
                 <li><a href="#">고등</a></li>
                 <li><a href="#">단행본</a></li>
               </ul>
-            </nav>
-            <p class="nav-icons">
-              <button class="btn-search"></button>
-              <a href="#" class="my-page" aria-label="마이페이지"></a>
-              <button
-                class="btn-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-              </button>
-            </p>
+            </div>
+            <div class="gnb-col">
+              <h2><a href="#">자료실</a></h2>
+              <ul>
+                <li><a href="#">정답 및 해설</a></li>
+                <li><a href="#">정오표</a></li>
+                <li><a href="#">듣기자료</a></li>
+                <li><a href="#">교사용 자료</a></li>
+                <li><a href="#">부가자료</a></li>
+                <li><a href="#">참고서 뷰어</a></li>
+              </ul>
+            </div>
+            <div class="gnb-col">
+              <h2><a href="#">이벤트</a></h2>
+            </div>
+            <div class="gnb-col">
+              <h2><a href="#">고객센터</a></h2>
+              <ul>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">고객 문의</a></li>
+                <li><a href="#">자주 묻는 질문</a></li>
+                <li><a href="#">오류 신고</a></li>
+                <li><a href="#">총판 안내</a></li>
+                <li><a href="#">제휴 문의</a></li>
+                <li><a href="#">투고 문의</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="utility">
-          <div class="utility-inner web-center">
-            <form class="search-form">
-              <input type="text" placeholder="검색어 입력" />
-              <button href="#" aria-label="검색"></button>
-            </form>
-            <a href="#" class="my-page" aria-label="마이페이지"></a>
+        </nav>
+      </header>
+      <main>
+        <section id="visual">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./images/visual_1.png" alt="">
+              </div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 5</div>
+              <div class="swiper-slide">Slide 6</div>
+            </div>
+            <div class="swiper-controls">
+              <div class="swiper-button-wrap">
+                <div class="swiper-button-prev" role="button" aria-label="이전"></div>
+                <div class="swiper-button-next" role="button" aria-label="다음"></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
           </div>
-        </div>
-      </div>
-      <nav class="gnb">
-        <div class="gnb-wrap web-center">
-          <div class="gnb-col">
-            <h2><a href="#">도서</a></h2>
-            <ul>
-              <li><a href="#">초등</a></li>
-              <li><a href="#">중등</a></li>
-              <li><a href="#">고등</a></li>
-              <li><a href="#">단행본</a></li>
-            </ul>
-          </div>
-          <div class="gnb-col">
-            <h2><a href="#">자료실</a></h2>
-            <ul>
-              <li><a href="#">정답 및 해설</a></li>
-              <li><a href="#">정오표</a></li>
-              <li><a href="#">듣기자료</a></li>
-              <li><a href="#">교사용 자료</a></li>
-              <li><a href="#">부가자료</a></li>
-              <li><a href="#">참고서 뷰어</a></li>
-            </ul>
-          </div>
-          <div class="gnb-col">
-            <h2><a href="#">이벤트</a></h2>
-          </div>
-          <div class="gnb-col">
-            <h2><a href="#">고객센터</a></h2>
-            <ul>
-              <li><a href="#">공지사항</a></li>
-              <li><a href="#">고객 문의</a></li>
-              <li><a href="#">자주 묻는 질문</a></li>
-              <li><a href="#">오류 신고</a></li>
-              <li><a href="#">총판 안내</a></li>
-              <li><a href="#">제휴 문의</a></li>
-              <li><a href="#">투고 문의</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <main></main>
-    <footer></footer>
+        </section>
+      </main>
+      <footer></footer>
+    </div>
 
     <script type="module" src="./js/app.js"></script>
   </body>

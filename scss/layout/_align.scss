@@ -1,11 +1,15 @@
 @use "../abstracts/" as *;
 
+#container{
+  margin-top: var(--headerHeight, 10.5rem);
+}
+
 .web-center{
   max-width: $webSize;
   margin: 0 auto;
 }
 
-.pad30{
+.padInline{
   padding-inline: 3rem;
 
   @include screenWidth($tablet){
