@@ -95,17 +95,24 @@ header {
   }
 }
 /************** HEADER : GNB *************/
+@keyframes gnbShow{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 .gnb {
-  opacity: 0;
-  visibility: hidden;
+  display: none;
   width: 100%;
   border-top: 0.1rem solid $gray_e5;
   box-shadow: 0 0.5rem 1rem rgba($color: #000000, $alpha: 0.1);
   background-color: #fff;
   transition: 0.4s;
   header.open & {
-    opacity: 1;
-    visibility: visible;
+    display: block;
+    animation: gnbShow 0.35s linear;
   }
   &-wrap {
     padding-inline: 1rem;
@@ -145,11 +152,7 @@ header {
   // responsive gnb
   @include screenWidth($tablet) {
     // gnb
-    height: 0;
-    transition: 0.2s;
-    header.open & {
-      height: 100vh;
-    }
+    height: 100vh;
     &-wrap {
       flex-direction: column;
       gap: 3rem;
