@@ -1,57 +1,71 @@
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+import { VisualData } from "../data/visualData.js";
 
+// visual 영역 swiper
 export const VisualSlide = () => {
-  const visual = document.querySelector('#visual');
+  const visual = document.querySelector("#visual");
   const visualSlide = visual.querySelector(".swiper");
-  if(!visualSlide) return;
-  
-  function setSlideSize(){
-    const content = document.querySelector('.main-header-inner');
-    const contentWidth = content.offsetWidth;
-    const compStyles = window.getComputedStyle(content);
-    const paddingValue = parseInt(compStyles.getPropertyValue('padding-inline'));
-    const slideItemWidth = `${(contentWidth - paddingValue*2)/10}rem`;
-    // 슬라이드 너비 css에 전달
-    visual.style.setProperty('--content-width', slideItemWidth);
-    console.log(slideItemWidth)
+  if (!visualSlide) return;
 
-    const slides = document.querySelectorAll('#visual .swiper-slide');
-    slides.forEach(slide=>{
-      slide.style.width = slideItemWidth;
-    })
-  }
-  setSlideSize();  
-  window.addEventListener('resize', setSlideSize);
+  const renderVisualSlide = (dataList = VisualData) => {
+    const visualSlideWrap = document.querySelector(".swiper-wrapper");
+    const slideContents = dataList
+      .map(({ pcImage, moImage, description }) => {
+        if (window.innerWidth > 990) {
+          return `<div class="swiper-slide">
+                  <img src="./images/${pcImage}" alt="${description}">
+              </div>`;
+        } else {
+          return `<div class="swiper-slide">
+                  <img src="./images/${moImage}" alt="${description}">
+              </div>`;
+        }
+      })
+      .join("");
+    visualSlideWrap.innerHTML = slideContents;
+  };
 
-  const swiper1 = new Swiper("#visual .swiper", {
-    slidesPerView: "auto",
-    loop: true,
-    // autoplay: {
-    //   delay: 2500,
-    // },
-    observeParents: true,
-    observe: true,
-    spaceBetween:80,
-    centeredSlides: true,
-    pagination: {
-      el: ".swiper-pagination",
-      type: "fraction",
-      renderFraction: function (currentClass, totalClass) {
-        return (
-          '<span class="' +
-          currentClass +
-          '"></span>' +
-          " | " +
-          '<span class="' +
-          totalClass +
-          '"></span>'
-        );
+  renderVisualSlide();
+
+  let swiper1;
+  function initializeSwiper() {
+    swiper1 = new Swiper("#visual .swiper", {
+      slidesPerView: "auto",
+      spaceBetween: 80,
+      loop: true,
+      autoplay: {
+        delay: 4000,
       },
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+      observeParents: true,
+      observe: true,
+      centeredSlides: true,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+        renderFraction: function (currentClass, totalClass) {
+          return (
+            '<span class="' +
+            currentClass +
+            '"></span>' +
+            " | " +
+            '<span class="' +
+            totalClass +
+            '"></span>'
+          );
+        },
+      },
+      navigation: {
+        nextEl: "#visual .swiper-button-next",
+        prevEl: "#visual .swiper-button-prev",
+      },
+    });
+  }
 
+  initializeSwiper();
+
+  window.addEventListener("resize", () => {
+    swiper1.destroy();
+    renderVisualSlide();
+    initializeSwiper();
+  });
 };

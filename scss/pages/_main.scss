@@ -5,6 +5,7 @@
 header {
   position: fixed;
   inset: 0 0 auto 0;
+  z-index: 999;
 }
 .header-inner {
   display: flex;
@@ -96,6 +97,7 @@ header {
   width: 100%;
   border-top: 0.1rem solid $gray_e5;
   box-shadow: 0 0.5rem 1rem rgba($color: #000000, $alpha: 0.1);
+  background-color: #fff;
   transition: 0.4s;
   header.open & {
     opacity: 1;

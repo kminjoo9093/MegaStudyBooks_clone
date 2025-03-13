@@ -5,23 +5,13 @@
 
 // visual slide
 #visual{
+  width: 100vw;
+  .visual-swiper{
+    @extend .padInline;
+  }
   .swiper{
-    position: relative;
-    &-controls{
-      border: 1px solid blue;
-      width: var(--content-width, 144rem);
-      height: 100%;
-      @include positionCenter;
-    }
-    &-button-wrap{
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-      height: auto;
-      display: flex;
-      justify-content: space-between;
-    }
+    // position: relative;
+    overflow: visible;
     &-pagination{
       position: absolute;
       bottom: 3rem;
@@ -42,6 +32,13 @@
     .swiper-button-prev:after,
     .swiper-button-next:after {
       content: '';
-  }
+    }
+    .swiper-button-prev,
+    .swiper-button-next,
+    .swiper-pagination{
+      @include screenWidth($tablet){
+        display: none;
+      }
+    }
   }
 }

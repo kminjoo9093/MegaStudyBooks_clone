@@ -147,11 +147,11 @@ img {
   margin: 0 auto;
 }
 
-.padInline, .main-header-inner, .utility-inner {
+.padInline, #visual .visual-swiper, .main-header-inner, .utility-inner {
   padding-inline: 3rem;
 }
 @media (max-width: 990px) {
-  .padInline, .main-header-inner, .utility-inner {
+  .padInline, #visual .visual-swiper, .main-header-inner, .utility-inner {
     padding-inline: 2rem;
   }
 }
@@ -160,6 +160,7 @@ img {
 header {
   position: fixed;
   inset: 0 0 auto 0;
+  z-index: 999;
 }
 
 .header-inner {
@@ -257,6 +258,7 @@ header {
   width: 100%;
   border-top: 0.1rem solid #E5E5E5;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  background-color: #fff;
   transition: 0.4s;
 }
 header.open .gnb {
@@ -399,36 +401,24 @@ header.open .nav-icons .btn-menu span:last-child {
   height: 4.4rem;
   border-radius: 50%;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-  position: static;
+  position: absolute;
+  top: 50%;
   background: #fff url(../../images/icon_chevron_R.svg) no-repeat center/1.6rem auto;
 }
 .swiper .swiper-button-prev {
-  transform: rotate(180deg) translateX(50%);
+  left: 0;
+  transform: rotate(180deg) translate(50%, 50%);
 }
 .swiper .swiper-button-next {
-  transform: rotate(0) translateX(50%);
+  right: 0;
+  transform: rotate(0) translate(50%, -50%);
 }
 
+#visual {
+  width: 100vw;
+}
 #visual .swiper {
-  position: relative;
-}
-#visual .swiper-controls {
-  border: 1px solid blue;
-  width: var(--content-width, 144rem);
-  height: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-#visual .swiper-button-wrap {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: space-between;
+  overflow: visible;
 }
 #visual .swiper-pagination {
   position: absolute;
@@ -450,6 +440,13 @@ header.open .nav-icons .btn-menu span:last-child {
 #visual .swiper .swiper-button-prev:after,
 #visual .swiper .swiper-button-next:after {
   content: "";
+}
+@media (max-width: 990px) {
+  #visual .swiper .swiper-button-prev,
+  #visual .swiper .swiper-button-next,
+  #visual .swiper .swiper-pagination {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
