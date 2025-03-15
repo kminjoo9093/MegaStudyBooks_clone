@@ -3,6 +3,7 @@
 
 /************** HEADER : main header *************/
 header {
+  background-color: #fff;
   position: fixed;
   top: 0;
   right: 0;
@@ -236,5 +237,15 @@ header {
         text-align: center;
       }
     }
+  }
+}
+
+/************** SECTION : MEGA PICK *************/
+#mega-pick{
+  @extend .contentMb;
+  margin-top: 4rem;
+  .pick-inner{
+    @extend .padInline;
+    overflow: hidden;
   }
 }

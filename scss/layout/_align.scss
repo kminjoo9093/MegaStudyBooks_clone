@@ -1,7 +1,7 @@
 @use "../abstracts/" as *;
 
 #container{
-  margin-top: var(--headerHeight, 10.5rem);
+  margin-top: var(--headerHeight, 12rem);
 }
 
 .web-center{
@@ -14,5 +14,13 @@
 
   @include screenWidth($tablet){
     padding-inline: 2rem;
+  }
+}
+
+.contentMb{
+  margin-bottom: 15rem;
+
+  @include screenWidth($tablet){
+    margin-bottom: 6.4rem;
   }
 }

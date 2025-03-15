@@ -1,0 +1,31 @@
+@use "../abstracts/" as *;
+
+/************** Tab : MEGA PICK *************/
+.tab-hash{
+  button{
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 4.5rem;
+    text-wrap: nowrap;
+    background-color: #fff;
+    border: .1rem solid $gray_cf;
+    border-radius: 4.5rem;
+    padding-inline: 3rem;
+    &.active{
+      color: #fff;
+      background-color: $gray_11;
+      border-color: $gray_11;
+    }
+
+    // responsive
+    @include screenWidth($tablet){
+      font-size: 1.6rem;
+      line-height: 3rem;
+      border-radius: 3rem;
+      padding-inline: 1rem;
+    }
+    @include screenWidth($tablet_s){
+      font-size: 1.4rem;
+    }
+  }
+}

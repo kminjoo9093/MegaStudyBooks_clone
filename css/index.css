@@ -1,5 +1,13 @@
 @charset "UTF-8";
 @import url("https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css");
+/*********** header vars ***********/
+:root {
+  --logo_width: 17.9rem;
+  --btn-menu_width: 2.4rem;
+}
+
+/*********** color ***********/
+/*********** responsive ***********/
 /* 폰트 초기화 */
 html {
   font-size: 62.5%;
@@ -11,6 +19,22 @@ body {
   font-weight: 400;
   line-height: 1.4em;
   color: #111;
+}
+
+.heading-title {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1em;
+}
+@media (max-width: 990px) {
+  .heading-title {
+    font-size: 3.2rem;
+  }
+}
+@media (max-width: 570px) {
+  .heading-title {
+    font-size: 2.4rem;
+  }
 }
 
 /* border-box 초기화 */
@@ -130,16 +154,8 @@ img {
   top: 10px;
 }
 
-/*********** header vars ***********/
-:root {
-  --logo_width: 17.9rem;
-  --btn-menu_width: 2.4rem;
-}
-
-/*********** color ***********/
-/*********** responsive ***********/
 #container {
-  margin-top: var(--headerHeight, 10.5rem);
+  margin-top: var(--headerHeight, 12rem);
 }
 
 .web-center {
@@ -147,17 +163,27 @@ img {
   margin: 0 auto;
 }
 
-.padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul {
+.padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner {
   padding-inline: 3rem;
 }
 @media (max-width: 990px) {
-  .padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul {
+  .padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner {
     padding-inline: 2rem;
+  }
+}
+
+.contentMb, #mega-pick {
+  margin-bottom: 15rem;
+}
+@media (max-width: 990px) {
+  .contentMb, #mega-pick {
+    margin-bottom: 6.4rem;
   }
 }
 
 /************** HEADER : main header *************/
 header {
+  background-color: #fff;
   position: fixed;
   top: 0;
   right: 0;
@@ -408,6 +434,14 @@ header.open .gnb {
   }
 }
 
+/************** SECTION : MEGA PICK *************/
+#mega-pick {
+  margin-top: 4rem;
+}
+#mega-pick .pick-inner {
+  overflow: hidden;
+}
+
 .utility .search-form button {
   background: #0082FF url(../../images/icon_search.svg) no-repeat center/1.6rem auto;
   width: 3.6rem;
@@ -489,8 +523,8 @@ header.open .nav-icons .btn-menu span:last-child {
   }
 }
 
-.swiper .swiper-button-prev,
-.swiper .swiper-button-next {
+.swiper .swiper-button-prev.type1,
+.swiper .swiper-button-next.type1 {
   width: 4.4rem;
   height: 4.4rem;
   border-radius: 50%;
@@ -499,13 +533,30 @@ header.open .nav-icons .btn-menu span:last-child {
   top: 50%;
   background: #fff url(../../images/icon_chevron_R.svg) no-repeat center/1.6rem auto;
 }
+.swiper .swiper-button-prev.type2,
+.swiper .swiper-button-next.type2 {
+  margin-top: 0;
+  position: static;
+  width: 4rem;
+  background: #fff url(../../images/icon_chevron_R2.svg) no-repeat center/2.4rem auto;
+}
+@media (max-width: 990px) {
+  .swiper .swiper-button-prev.type2,
+  .swiper .swiper-button-next.type2 {
+    display: none;
+  }
+}
+.swiper .swiper-button-prev:after,
+.swiper .swiper-button-next:after {
+  content: "";
+}
 .swiper .swiper-button-prev {
   left: 0;
-  transform: rotate(180deg) translate(50%, 50%);
+  transform: rotate(180deg);
 }
 .swiper .swiper-button-next {
   right: 0;
-  transform: rotate(0) translate(50%, -50%);
+  transform: rotate(0);
 }
 
 /************** SECTION : VISUAL *************/
@@ -532,15 +583,163 @@ header.open .nav-icons .btn-menu span:last-child {
   vertical-align: middle;
   margin-inline: 0.3rem;
 }
-#visual .swiper .swiper-button-prev:after,
-#visual .swiper .swiper-button-next:after {
-  content: "";
+#visual .swiper .swiper-button-prev {
+  transform: rotate(180deg) translate(50%, 50%);
+}
+#visual .swiper .swiper-button-next {
+  transform: rotate(0) translate(50%, -50%);
 }
 @media (max-width: 990px) {
   #visual .swiper .swiper-button-prev,
   #visual .swiper .swiper-button-next,
   #visual .swiper .swiper-pagination {
     display: none;
+  }
+}
+
+/************** SECTION : MEGA PICK *************/
+#mega-pick .tab-swiper {
+  position: relative;
+}
+#mega-pick .tab-swiper .tab-hash {
+  padding-block: 3.2rem;
+}
+@media (max-width: 990px) {
+  #mega-pick .tab-swiper .tab-hash {
+    padding-block: 2rem;
+  }
+}
+#mega-pick .tab-swiper li {
+  width: auto;
+}
+#mega-pick .tab-swiper .swiper-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding-inline: 2rem 0.7rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  height: 100%;
+  background-color: #fff;
+}
+@media (max-width: 990px) {
+  #mega-pick .tab-swiper .swiper-controls {
+    display: none;
+  }
+}
+#mega-pick .tab-swiper .swiper-controls div {
+  position: static;
+  margin-top: 0;
+}
+#mega-pick .pick-swiper {
+  overflow-y: visible;
+}
+#mega-pick .pick-swiper .swiper-wrapper.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+#mega-pick .pick-swiper .pick-link {
+  display: block;
+}
+#mega-pick .pick-swiper .pick-link:hover figcaption {
+  opacity: 1;
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#mega-pick .pick-swiper .pick-link p {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.4em;
+  padding-block: 1.5rem;
+}
+@media (max-width: 990px) {
+  #mega-pick .pick-swiper .pick-link p {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 750px) {
+  #mega-pick .pick-swiper .pick-link p {
+    font-size: 1.4rem;
+  }
+}
+#mega-pick .pick-swiper figure {
+  padding: 25%;
+  background-color: #F5F8FC;
+  border-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 990px) {
+  #mega-pick .pick-swiper figure {
+    padding: 25% 30%;
+  }
+}
+#mega-pick .pick-swiper figure img {
+  width: 100%;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+}
+#mega-pick .pick-swiper figure figcaption {
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  transition: 0.35s;
+}
+@media (max-width: 750px) {
+  #mega-pick .pick-swiper figure figcaption {
+    font-size: 1.4rem;
+  }
+}
+#mega-pick .pick-swiper .swiper-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+#mega-pick .pick-swiper .swiper-controls .swiper-pagination {
+  position: static;
+}
+#mega-pick .pick-swiper .swiper-controls .swiper-pagination .swiper-pagination-progressbar-fill {
+  background-color: #000;
+}
+
+/************** Tab : MEGA PICK *************/
+.tab-hash button {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 4.5rem;
+  text-wrap: nowrap;
+  background-color: #fff;
+  border: 0.1rem solid #CFCFCF;
+  border-radius: 4.5rem;
+  padding-inline: 3rem;
+}
+.tab-hash button.active {
+  color: #fff;
+  background-color: #111;
+  border-color: #111;
+}
+@media (max-width: 990px) {
+  .tab-hash button {
+    font-size: 1.6rem;
+    line-height: 3rem;
+    border-radius: 3rem;
+    padding-inline: 1rem;
+  }
+}
+@media (max-width: 750px) {
+  .tab-hash button {
+    font-size: 1.4rem;
   }
 }
 

@@ -1,6 +1,7 @@
 export const HeaderHeight = ()=>{
   function setMarginTop(){
-    const headerHeight = document.querySelector('.header-inner').offsetHeight;
+    const headerHeight = Math.ceil(document.querySelector('.header-inner').offsetHeight);
+    console.log(headerHeight)
     const container = document.querySelector('#container');
   
     container.style.setProperty('--headerHeight', `${headerHeight/10}rem`);
