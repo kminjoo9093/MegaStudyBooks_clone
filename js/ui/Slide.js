@@ -134,3 +134,15 @@ export const PickSlide2 = () => {
     pickSlideWrap.classList.add('grid');
   }
 }
+
+// 메인 배너 슬라이드
+const swiper = new Swiper(".banner-swiper", {
+  slidesPerView: 1,
+  loop: true,
+  autoplay: {
+    delay: 3000,
+  },
+  pagination: {
+    el: ".banner-swiper .swiper-pagination",
+  },
+});

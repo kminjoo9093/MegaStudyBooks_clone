@@ -163,20 +163,20 @@ img {
   margin: 0 auto;
 }
 
-.padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner {
+.padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div {
   padding-inline: 3rem;
 }
 @media (max-width: 990px) {
-  .padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner {
+  .padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div {
     padding-inline: 2rem;
   }
 }
 
-.contentMb, #mega-pick {
+.contentMb, #mega-pick, .main-banner {
   margin-bottom: 15rem;
 }
 @media (max-width: 990px) {
-  .contentMb, #mega-pick {
+  .contentMb, #mega-pick, .main-banner {
     margin-bottom: 6.4rem;
   }
 }
@@ -440,6 +440,25 @@ header.open .gnb {
 }
 #mega-pick .pick-inner {
   overflow: hidden;
+}
+
+/************** MAIN BANNER *************/
+.main-banner a {
+  display: block;
+}
+.main-banner a img {
+  width: 100%;
+}
+.main-banner a img.banner-img-m {
+  display: none;
+}
+@media (max-width: 990px) {
+  .main-banner a img.banner-img-pc {
+    display: none;
+  }
+  .main-banner a img.banner-img-m {
+    display: block;
+  }
 }
 
 .utility .search-form button {
@@ -711,6 +730,11 @@ header.open .nav-icons .btn-menu span:last-child {
 }
 #mega-pick .pick-swiper .swiper-controls .swiper-pagination .swiper-pagination-progressbar-fill {
   background-color: #000;
+}
+
+/************** MAIN BANNER *************/
+.banner-swiper .swiper-pagination-bullet-active {
+  background-color: #fff;
 }
 
 /************** Tab : MEGA PICK *************/

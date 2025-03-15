@@ -249,3 +249,28 @@ header {
     overflow: hidden;
   }
 }
+
+/************** MAIN BANNER *************/
+.main-banner{
+  @extend .contentMb;
+  > div{
+    @extend .padInline;
+  }
+  a{
+    display: block;
+    img{
+      width: 100%;
+      &.banner-img-m{
+        display: none;
+      }
+      @include screenWidth($tablet){
+        &.banner-img-pc{
+          display: none;
+        }
+        &.banner-img-m{
+          display: block;
+        }
+      }
+    }
+  }
+}
