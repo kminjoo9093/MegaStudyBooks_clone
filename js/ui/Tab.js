@@ -1,7 +1,7 @@
 export const Tab = (tabWrap)=>{
   const tab = document.querySelector(tabWrap);
   if(!tab) return;
-  const tabBtns = tab.querySelectorAll('button');
+  const tabBtns = tab.querySelectorAll('.tab-btn');
 
   tabBtns.forEach(btn=>{
     btn.addEventListener('click', ()=>{
@@ -28,7 +28,7 @@ export const Tab = (tabWrap)=>{
   })
 }
 
-export const ClickedTab = (tabList, callback)=>{
+export const getClickedTab = (tabList, callback)=>{
   const tabs = document.querySelectorAll(tabList);
   [...tabs].forEach((tab)=>{
     if(tab.classList.contains('active')){

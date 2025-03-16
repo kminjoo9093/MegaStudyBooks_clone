@@ -84,6 +84,10 @@
       }
     }
   }
+  .swiper-button-prev,
+  .swiper-button-next{
+    margin-top: 0;
+  }
   .swiper-button-prev.type1,
   .swiper-button-next.type1 {
     width: 4.4rem;

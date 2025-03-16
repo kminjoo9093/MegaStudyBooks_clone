@@ -71,9 +71,9 @@ export const VisualSlide = () => {
 };
 
 // MEGA PICK : Tab 슬라이드
-export const PickSlide1 = ()=>{
-  const tabSlide = document.querySelector('#mega-pick .tab-swiper');
-  if(!tabSlide) return;
+export const PickSlide1 = () => {
+  const tabSlide = document.querySelector("#mega-pick .tab-swiper");
+  if (!tabSlide) return;
 
   const swiper2 = new Swiper("#mega-pick .tab-swiper", {
     slidesPerView: "auto",
@@ -83,16 +83,16 @@ export const PickSlide1 = ()=>{
       prevEl: ".tab-swiper .swiper-button-prev",
     },
   });
-}
+};
 
 // MEGA PICK : book cover 슬라이드
 export const PickSlide2 = () => {
-  const pickSlide = document.querySelector('#mega-pick .pick-swiper');
-  const pickSlideWrap = document.querySelector('.pick-swiper .swiper-wrapper');
-  if(!pickSlide) return;
+  const pickSlide = document.querySelector("#mega-pick .pick-swiper");
+  const pickSlideWrap = document.querySelector(".pick-swiper .swiper-wrapper");
+  if (!pickSlide) return;
 
   let swiper3;
-  function initializeSwiper (){
+  function initializeSwiper() {
     swiper3 = new Swiper("#mega-pick .pick-swiper", {
       slidesPerView: 2,
       spaceBetween: 10,
@@ -109,40 +109,75 @@ export const PickSlide2 = () => {
           slidesPerView: 4,
           spaceBetween: 20,
         },
-      }
+      },
     });
   }
 
-  window.onload = function(){
+  window.onload = function () {
     initializeSwiper();
-    if(window.innerWidth <= 750){
+    if (window.innerWidth <= 750) {
       addGrid();
-    } 
-  }
+    }
+  };
 
-  window.addEventListener('resize', ()=>{
-    if(window.innerWidth <= 750){
+  window.addEventListener("resize", () => {
+    if (window.innerWidth <= 750) {
       addGrid();
     } else {
-      pickSlideWrap.classList.remove('grid');
+      pickSlideWrap.classList.remove("grid");
       initializeSwiper();
     }
-  })
+  });
 
-  const addGrid = ()=>{
+  const addGrid = () => {
     swiper3.destroy();
-    pickSlideWrap.classList.add('grid');
-  }
-}
+    pickSlideWrap.classList.add("grid");
+  };
+};
 
 // 메인 배너 슬라이드
-const swiper = new Swiper(".banner-swiper", {
-  slidesPerView: 1,
-  loop: true,
-  autoplay: {
-    delay: 3000,
-  },
-  pagination: {
-    el: ".banner-swiper .swiper-pagination",
-  },
-});
+export const BannerSlide = () => {
+  const banner = document.querySelector(".main-banner");
+  if (!banner) return;
+
+  const swiper4 = new Swiper(".banner-swiper", {
+    slidesPerView: 1,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+    },
+    pagination: {
+      el: ".banner-swiper .swiper-pagination",
+    },
+  });
+};
+
+// 베스트셀러 슬라이드
+export const BestSellerSlide = () => {
+  const bestSlide = document.querySelector(".bestseller-swiper");
+  if (!bestSlide) return;
+
+  const swiper5 = new Swiper(".bestseller-swiper", {
+    slidesPerView: "auto",
+    loop: true,
+    pagination: {
+      el: "#bestseller .swiper-pagination",
+      type: "progressbar",
+    },
+    navigation: {
+      nextEl: "#bestseller .swiper-button-next",
+      prevEl: "#bestseller .swiper-button-prev",
+    },
+    breakpoints: {
+      990: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      320: {
+        slidesPerView: 2,
+        centeredSlides: true,
+        spaceBetween: 40,
+      },
+    },
+  });
+};

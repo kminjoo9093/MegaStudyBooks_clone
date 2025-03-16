@@ -1,5 +1,5 @@
 import { PickData } from "../data/pickData.js";
-import { Tab, ClickedTab } from "./Tab.js";
+import { Tab, getClickedTab } from "./Tab.js";
 
 export const RenderPickTab = (dataList = PickData)=>{
   const tab = document.querySelector('.tab-hash');
@@ -11,7 +11,7 @@ export const RenderPickTab = (dataList = PickData)=>{
   const newCategory = [...new Set(categories)];
 
   const categoryContents = newCategory.map(category=>{
-    return `<li class="swiper-slide"><button># ${category}</button></li>`;
+    return `<li class="swiper-slide"><button class="tab-btn"># ${category}</button></li>`;
   }).join('');
   tab.innerHTML = categoryContents;
 
@@ -23,7 +23,7 @@ export const renderPickContents = (dataList = PickData)=>{
   const pickContentsWrap = document.querySelector('.pick-swiper .swiper-wrapper');
   if(!pickContentsWrap) return;
 
-  ClickedTab('.tab-hash button', (clickedTabContent)=>{
+  getClickedTab('.tab-hash .tab-btn', (clickedTabContent)=>{
     const tabContent = clickedTabContent.replace('# ', '');
 
     const pickList = dataList.filter(({category})=>{
