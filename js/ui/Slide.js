@@ -1,5 +1,6 @@
 import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
 import { VisualData } from "../data/visualData.js";
+import { ViewMore } from "./ViewMore.js";
 
 // visual 영역 swiper
 export const VisualSlide = () => {
@@ -113,12 +114,12 @@ export const PickSlide2 = () => {
     });
   }
 
-  window.onload = function () {
+  window.addEventListener('load', ()=>{
     initializeSwiper();
     if (window.innerWidth <= 750) {
       addGrid();
     }
-  };
+  })
 
   window.addEventListener("resize", () => {
     if (window.innerWidth <= 750) {
@@ -132,6 +133,7 @@ export const PickSlide2 = () => {
   const addGrid = () => {
     swiper3.destroy();
     pickSlideWrap.classList.add("grid");
+    ViewMore("#mega-pick", ".pick-swiper", 4);
   };
 };
 
@@ -180,4 +182,57 @@ export const BestSellerSlide = () => {
       },
     },
   });
+};
+
+// 유튜브 슬라이드
+export const YoutubeSlide = () => {
+  const youtubeSlide = document.querySelector(".youtube-swiper");
+  if (!youtubeSlide) return;
+
+  const slideWrap = youtubeSlide.querySelector(".swiper-wrapper");
+
+  let swiper6;
+  function initializeSwiper() {
+    swiper6 = new Swiper(".youtube-swiper", {
+      slidesPerView: "auto",
+      spaceBetween: 30,
+      navigation: {
+        nextEl: "#youtube .swiper-button-next",
+        prevEl: "#youtube .swiper-button-prev",
+      },
+      breakpoints: {
+        990: {
+          slidesPerView: 2.5,
+          spaceBetween: 30,
+        },
+        750: {
+          slidesPerView: 1.6,
+          spaceBetween: 10,
+        },
+      },
+    });
+  }
+
+  window.addEventListener("load", () => {
+    initializeSwiper();
+    if (window.innerWidth < 750) {
+      changeSlideToFlex();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth < 750) {
+      changeSlideToFlex();
+    } else {
+      swiper6.destroy();
+      slideWrap.classList.remove("block");
+      initializeSwiper();
+    }
+  });
+
+  function changeSlideToFlex() {
+    swiper6.destroy();
+    slideWrap.classList.add("block");
+    ViewMore("#youtube", ".youtube-swiper", 2);
+  }
 };

@@ -1,5 +1,6 @@
 import { PickData } from "../data/pickData.js";
 import { Tab, getClickedTab } from "./Tab.js";
+import {PickSlide2} from "../ui/Slide.js";
 
 export const RenderPickTab = (dataList = PickData)=>{
   const tab = document.querySelector('.tab-hash');
@@ -42,4 +43,5 @@ export const renderPickContents = (dataList = PickData)=>{
     }).join('');
     pickContentsWrap.innerHTML = pickContents;
   });
+  PickSlide2();
 }

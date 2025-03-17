@@ -4,7 +4,8 @@ export const Tab = (tabWrap)=>{
   const tabBtns = tab.querySelectorAll('.tab-btn');
 
   tabBtns.forEach(btn=>{
-    btn.addEventListener('click', ()=>{
+    btn.addEventListener('click', (e)=>{
+      e.preventDefault();
       removeClass();
       addClass(btn);
     })

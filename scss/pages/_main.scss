@@ -96,11 +96,11 @@ header {
   }
 }
 /************** HEADER : GNB *************/
-@keyframes gnbShow{
-  0%{
+@keyframes gnbShow {
+  0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
@@ -182,7 +182,7 @@ header {
       max-width: 15rem;
       border-radius: 2rem;
       transition: 0.35s;
-      &:hover{
+      &:hover {
         box-shadow: 0 0 3rem rgba($color: #000000, $alpha: 0.1);
       }
     }
@@ -214,7 +214,7 @@ header {
       gap: 1rem;
       li {
         border-radius: 1rem;
-        &:hover{
+        &:hover {
           box-shadow: 0 0 3rem rgba($color: #000000, $alpha: 0.1);
         }
       }
@@ -241,33 +241,40 @@ header {
 }
 
 /************** SECTION : MEGA PICK *************/
-#mega-pick{
-  @extend .contentMb;
+#mega-pick {
+  @extend .contentPb;
   margin-top: 4rem;
-  .pick-inner{
+  .pick-inner {
     @extend .padInline;
     overflow: hidden;
+  }
+  .btn-more{
+    margin-top: 2rem;
+    display: none;
+    @include screenWidth($tablet_s){
+      display: block;
+    }
   }
 }
 
 /************** MAIN BANNER *************/
-.main-banner{
-  @extend .contentMb;
-  > div{
+.main-banner {
+  @extend .contentPb;
+  > div {
     @extend .padInline;
   }
-  a{
+  a {
     display: block;
-    img{
+    img {
       width: 100%;
-      &.banner-img-m{
+      &.banner-img-m {
         display: none;
       }
-      @include screenWidth($tablet){
-        &.banner-img-pc{
+      @include screenWidth($tablet) {
+        &.banner-img-pc {
           display: none;
         }
-        &.banner-img-m{
+        &.banner-img-m {
           display: block;
         }
       }
@@ -276,10 +283,10 @@ header {
 }
 
 /************** BESTSELLER *************/
-#bestseller{
+#bestseller {
   position: relative;
-  &::before{
-    content: '';
+  &::before {
+    content: "";
     width: 65rem;
     height: 100%;
     position: absolute;
@@ -287,45 +294,45 @@ header {
     left: 0;
     z-index: -1;
     background-color: $blue_d5;
-    border-radius: 0 10rem 10rem 0;
-    @include screenWidth($tablet){
+    border-radius: 0 $radius_bg_pc $radius_bg_pc 0;
+    @include screenWidth($tablet) {
       width: 45%;
-      border-radius: 0 6rem 6rem 0;
+      border-radius: 0 $radius_bg_m $radius_bg_m 0;
     }
   }
-  > div{
+  > div {
     @extend .padInline;
   }
-  .heading{
+  .heading {
     display: flex;
     align-items: center;
     gap: 2.5rem;
     padding-block: 5rem;
-    @include screenWidth($tablet){
+    @include screenWidth($tablet) {
       justify-content: space-between;
     }
   }
-  .bestseller-tab{
-    li{
+  .bestseller-tab {
+    li {
       font-size: 1.8rem;
       font-weight: 700;
       display: inline-block;
       padding: 1.5rem;
       cursor: pointer;
-      @include screenWidth($tablet){
+      @include screenWidth($tablet) {
         padding: 1rem;
         font-size: 1.6rem;
       }
-      @include screenWidth($mobile){
-        padding: .5rem;
+      @include screenWidth($mobile) {
+        padding: 0.5rem;
         font-size: 1.4rem;
       }
-      &.active{
+      &.active {
         color: $blue_00;
         position: relative;
-        &::before{
-          content: '';
-          width: .6rem;
+        &::before {
+          content: "";
+          width: 0.6rem;
           aspect-ratio: 1;
           border-radius: 50%;
           background-color: $blue_00;
@@ -333,12 +340,45 @@ header {
           bottom: 0;
           left: 50%;
           transform: translateX(-50%);
-          @include screenWidth($mobile){
-            width: .4rem;
+          @include screenWidth($mobile) {
+            width: 0.4rem;
             bottom: -0.2rem;
           }
         }
       }
+    }
+  }
+}
+
+/************** YOUTUBE *************/
+#youtube {
+  background-color: $blue_d5;
+  position: relative;
+  isolation: isolate;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: $radius_bg_pc 0 0 0;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+  > div {
+    @extend .padInline;
+    @extend .contentPb;
+    padding-top: 15rem;
+  }
+  .heading{
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn-more{
+    margin-top: 1rem;
+    display: none;
+    @include screenWidth($tablet_s){
+      display: block;
     }
   }
 }

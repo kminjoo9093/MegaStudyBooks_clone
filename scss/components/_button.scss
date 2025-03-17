@@ -72,10 +72,9 @@
 }
 
 // swiper prev/next button
-.swiper {
   @mixin swiperArrowBtn($direction) {
     .swiper-button-#{$direction} {
-      @if $direction == 'prev' {
+      @if $direction == "prev" {
         left: 0;
         transform: rotate(180deg);
       } @else {
@@ -85,7 +84,7 @@
     }
   }
   .swiper-button-prev,
-  .swiper-button-next{
+  .swiper-button-next {
     margin-top: 0;
   }
   .swiper-button-prev.type1,
@@ -100,20 +99,31 @@
       1.6rem auto;
   }
   .swiper-button-prev.type2,
-  .swiper-button-next.type2{
+  .swiper-button-next.type2 {
     margin-top: 0;
     position: static;
     width: 4rem;
     background: #fff url(../../images/icon_chevron_R2.svg) no-repeat center /
-    2.4rem auto;
-    @include screenWidth($tablet){
+      2.4rem auto;
+    @include screenWidth($tablet) {
       display: none;
     }
   }
   .swiper-button-prev:after,
   .swiper-button-next:after {
-    content: '';
+    content: "";
   }
   @include swiperArrowBtn("prev");
   @include swiperArrowBtn("next");
+
+// 더보기 버튼
+.btn-more{
+  font-size: 1.4rem;
+  line-height: 2.4em;
+  // padding-inline: 3.5rem;
+  display: block;
+  width: 12rem;
+  border: 0.1rem solid $gray_cf;
+  border-radius: 2.4rem;
+  margin: 0 auto;
 }

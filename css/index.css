@@ -7,6 +7,7 @@
 }
 
 /*********** color ***********/
+/*********** border-radius ***********/
 /*********** responsive ***********/
 /* 폰트 초기화 */
 html {
@@ -168,21 +169,21 @@ img {
   margin: 0 auto;
 }
 
-.padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div, #bestseller > div {
+.padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div, #bestseller > div, #youtube > div {
   padding-inline: 3rem;
 }
 @media (max-width: 990px) {
-  .padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div, #bestseller > div {
+  .padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div, #bestseller > div, #youtube > div {
     padding-inline: 2rem;
   }
 }
 
-.contentMb, #mega-pick, .main-banner {
-  margin-bottom: 15rem;
+.contentPb, #mega-pick, .main-banner, #youtube > div {
+  padding-bottom: 15rem;
 }
 @media (max-width: 990px) {
-  .contentMb, #mega-pick, .main-banner {
-    margin-bottom: 6.4rem;
+  .contentPb, #mega-pick, .main-banner, #youtube > div {
+    padding-bottom: 6.4rem;
   }
 }
 
@@ -446,6 +447,15 @@ header.open .gnb {
 #mega-pick .pick-inner {
   overflow: hidden;
 }
+#mega-pick .btn-more {
+  margin-top: 2rem;
+  display: none;
+}
+@media (max-width: 750px) {
+  #mega-pick .btn-more {
+    display: block;
+  }
+}
 
 /************** MAIN BANNER *************/
 .main-banner a {
@@ -539,6 +549,39 @@ header.open .gnb {
   }
 }
 
+/************** YOUTUBE *************/
+#youtube {
+  background-color: #D5E8FC;
+  position: relative;
+  isolation: isolate;
+}
+#youtube::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 10rem 0 0 0;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+#youtube > div {
+  padding-top: 15rem;
+}
+#youtube .heading {
+  display: flex;
+  justify-content: space-between;
+}
+#youtube .btn-more {
+  margin-top: 1rem;
+  display: none;
+}
+@media (max-width: 750px) {
+  #youtube .btn-more {
+    display: block;
+  }
+}
+
 .utility .search-form button {
   background: #0082FF url(../../images/icon_search.svg) no-repeat center/1.6rem auto;
   width: 3.6rem;
@@ -620,12 +663,13 @@ header.open .nav-icons .btn-menu span:last-child {
   }
 }
 
-.swiper .swiper-button-prev,
-.swiper .swiper-button-next {
+.swiper-button-prev,
+.swiper-button-next {
   margin-top: 0;
 }
-.swiper .swiper-button-prev.type1,
-.swiper .swiper-button-next.type1 {
+
+.swiper-button-prev.type1,
+.swiper-button-next.type1 {
   width: 4.4rem;
   height: 4.4rem;
   border-radius: 50%;
@@ -634,30 +678,44 @@ header.open .nav-icons .btn-menu span:last-child {
   top: 50%;
   background: #fff url(../../images/icon_chevron_R.svg) no-repeat center/1.6rem auto;
 }
-.swiper .swiper-button-prev.type2,
-.swiper .swiper-button-next.type2 {
+
+.swiper-button-prev.type2,
+.swiper-button-next.type2 {
   margin-top: 0;
   position: static;
   width: 4rem;
   background: #fff url(../../images/icon_chevron_R2.svg) no-repeat center/2.4rem auto;
 }
 @media (max-width: 990px) {
-  .swiper .swiper-button-prev.type2,
-  .swiper .swiper-button-next.type2 {
+  .swiper-button-prev.type2,
+  .swiper-button-next.type2 {
     display: none;
   }
 }
-.swiper .swiper-button-prev:after,
-.swiper .swiper-button-next:after {
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
   content: "";
 }
-.swiper .swiper-button-prev {
+
+.swiper-button-prev {
   left: 0;
   transform: rotate(180deg);
 }
-.swiper .swiper-button-next {
+
+.swiper-button-next {
   right: 0;
   transform: rotate(0);
+}
+
+.btn-more {
+  font-size: 1.4rem;
+  line-height: 2.4em;
+  display: block;
+  width: 12rem;
+  border: 0.1rem solid #CFCFCF;
+  border-radius: 2.4rem;
+  margin: 0 auto;
 }
 
 /************** SWIPER COMMON STYLE *************/
@@ -735,7 +793,7 @@ header.open .nav-icons .btn-menu span:last-child {
     display: none;
   }
 }
-#mega-pick .tab-swiper .swiper-controls div {
+#mega-pick .tab-swiper .swiper-controls button {
   position: static;
 }
 #mega-pick .pick-swiper {
@@ -899,6 +957,28 @@ header.open .nav-icons .btn-menu span:last-child {
 @media (max-width: 990px) {
   .bestseller-swiper .swiper-pagination {
     margin-block: 6rem 0;
+  }
+}
+
+/************** YOUTUBE *************/
+.youtube-swiper {
+  padding-top: 3.2rem;
+}
+.youtube-swiper .swiper-wrapper.block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.swiper-controls {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+@media (max-width: 990px) {
+  .swiper-controls {
+    display: none;
   }
 }
 
