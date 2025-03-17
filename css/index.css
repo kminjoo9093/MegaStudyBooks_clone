@@ -169,20 +169,20 @@ img {
   margin: 0 auto;
 }
 
-.padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div, #bestseller > div, #youtube > div {
+.padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div, #bestseller > div, #youtube > div, #notice > div, #community > div {
   padding-inline: 3rem;
 }
 @media (max-width: 990px) {
-  .padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div, #bestseller > div, #youtube > div {
+  .padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div, #bestseller > div, #youtube > div, #notice > div, #community > div {
     padding-inline: 2rem;
   }
 }
 
-.contentPb, #mega-pick, .main-banner, #youtube > div {
+.contentPb, #mega-pick, .main-banner, #youtube > div, #notice, #community {
   padding-bottom: 15rem;
 }
 @media (max-width: 990px) {
-  .contentPb, #mega-pick, .main-banner, #youtube > div {
+  .contentPb, #mega-pick, .main-banner, #youtube > div, #notice, #community {
     padding-bottom: 6.4rem;
   }
 }
@@ -579,6 +579,148 @@ header.open .gnb {
 @media (max-width: 750px) {
   #youtube .btn-more {
     display: block;
+  }
+}
+
+/************** EVENT *************/
+/************** NOTICE *************/
+#notice > div {
+  text-align: center;
+}
+#notice .board {
+  width: 100%;
+  padding-top: 3.2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+@media (max-width: 990px) {
+  #notice .board {
+    flex-direction: column;
+  }
+}
+#notice .board li {
+  width: 33.3%;
+}
+@media (max-width: 990px) {
+  #notice .board li {
+    width: 100%;
+  }
+}
+#notice .board li a {
+  display: block;
+  padding: 3.2rem;
+  background-color: #F5F8FC;
+  border-radius: 2rem;
+  transition: 0.35s;
+}
+#notice .board li a:hover {
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 990px) {
+  #notice .board li a {
+    padding: 2rem;
+  }
+}
+#notice .board li h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1em;
+  padding-bottom: 2rem;
+  max-width: 100%;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@media (max-width: 990px) {
+  #notice .board li h3 {
+    font-size: 1.8rem;
+    padding-bottom: 1rem;
+  }
+}
+@media (max-width: 750px) {
+  #notice .board li h3 {
+    font-size: 1.6rem;
+  }
+}
+#notice .board li span {
+  font-size: 1.6rem;
+  color: #999999;
+}
+@media (max-width: 990px) {
+  #notice .board li span {
+    font-size: 1.4rem;
+  }
+}
+
+/************** COMMUNITY *************/
+#community > div {
+  text-align: center;
+}
+#community > div .heading-title {
+  letter-spacing: 0.1rem;
+}
+#community .board {
+  padding-top: 6rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+}
+@media (max-width: 990px) {
+  #community .board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+#community .board li a {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border: 1px solid #DDDDDD;
+  padding: 2.5rem 3rem;
+  border-radius: 2rem;
+  transition: 0.35s;
+}
+#community .board li a:hover {
+  border: 0.1rem solid #000;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 990px) {
+  #community .board li a {
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+}
+@media (max-width: 750px) {
+  #community .board li a {
+    padding: 1rem;
+  }
+}
+#community .board li a img {
+  width: 2.5rem;
+}
+@media (max-width: 990px) {
+  #community .board li a img {
+    width: 2rem;
+  }
+}
+#community .board li a h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1em;
+  padding-right: 2rem;
+  flex: 1;
+  text-align: left;
+  background: url(../../images/icon_chevron_R.svg) no-repeat right center/1.8rem auto;
+}
+@media (max-width: 990px) {
+  #community .board li a h3 {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 750px) {
+  #community .board li a h3 {
+    font-size: 1.4rem;
   }
 }
 

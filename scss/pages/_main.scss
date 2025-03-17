@@ -382,3 +382,131 @@ header {
     }
   }
 }
+/************** EVENT *************/
+/************** NOTICE *************/
+#notice{
+  @extend .contentPb;
+  > div{
+    @extend .padInline;
+    text-align: center;
+  }
+  .board{
+    width: 100%;
+    padding-top: 3.2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    @include screenWidth($tablet){
+      flex-direction: column;
+    }
+    li{
+      width: 33.3%;
+      @include screenWidth($tablet){
+        width: 100%;
+      }
+      a{
+        display: block;
+        padding: 3.2rem;
+        background-color: $blue_f5;
+        border-radius: 2rem;
+        transition: 0.35s;
+        &:hover{
+          box-shadow: 0 0 3rem rgba($color: #000000, $alpha: 0.1);
+        }
+        @include screenWidth($tablet){
+          padding: 2rem;
+        }
+      }
+      h3{
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1em;
+        padding-bottom: 2rem;
+        max-width: 100%;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        @include screenWidth($tablet){
+          font-size: 1.8rem;
+          padding-bottom: 1rem;
+        }
+        @include screenWidth($tablet_s){
+          font-size: 1.6rem;
+        }
+      }
+      span{
+        font-size: 1.6rem;
+        color: $gray_99;
+        @include screenWidth($tablet){
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+
+/************** COMMUNITY *************/
+#community{
+  @extend .contentPb;
+  > div{
+    @extend .padInline;
+    text-align: center;
+    .heading-title{
+      letter-spacing: 0.1rem;
+    }
+  }
+  .board{
+    padding-top: 6rem;
+    display: grid;
+    gap: 1.5rem;
+    // grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+    @include screenWidth($tablet){
+      grid-template-columns: repeat(2, 1fr);
+    }
+    li{
+      a{
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        border: 1px solid $gray_dd;
+        padding: 2.5rem 3rem;
+        border-radius: 2rem;
+        transition: 0.35s;
+        &:hover{
+          border: 0.1rem solid #000;
+          box-shadow: 0 0 2rem rgba($color: #000000, $alpha: 0.1);
+        }
+        @include screenWidth($tablet){
+          padding: 1.5rem;
+          border-radius: 1rem;
+        }
+        @include screenWidth($tablet_s){
+          padding: 1rem;
+        }
+        img{
+          width: 2.5rem;
+          @include screenWidth($tablet){
+            width: 2rem;
+          }
+        }
+        h3{
+          font-size: 1.8rem;
+          font-weight: 800;
+          line-height: 1em;
+          padding-right: 2rem;
+          flex: 1;
+          text-align: left;
+          background: url(../../images/icon_chevron_R.svg) no-repeat right center / 1.8rem auto;
+          @include screenWidth($tablet){
+            font-size: 1.6rem;
+          }
+          @include screenWidth($tablet_s){
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
