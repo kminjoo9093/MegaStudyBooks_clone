@@ -29,6 +29,9 @@ header {
     @include screenWidth($tablet) {
       width: 14.3rem;
     }
+    @include screenWidth($tablet_s) {
+      width: 12.5rem;
+    }
     a {
       display: inline-block;
       width: 100%;
@@ -248,10 +251,10 @@ header {
     @extend .padInline;
     overflow: hidden;
   }
-  .btn-more{
+  .btn-more {
     margin-top: 2rem;
     display: none;
-    @include screenWidth($tablet_s){
+    @include screenWidth($tablet_s) {
       display: block;
     }
   }
@@ -370,29 +373,29 @@ header {
     @extend .contentPb;
     padding-top: 15rem;
   }
-  .heading{
+  .heading {
     display: flex;
     justify-content: space-between;
   }
-  .btn-more{
+  .btn-more {
     margin-top: 1rem;
     display: none;
-    @include screenWidth($tablet_s){
+    @include screenWidth($tablet_s) {
       display: block;
     }
   }
 }
 /************** EVENT *************/
-#event{
+#event {
   @extend .contentPb;
-  > div{
+  > div {
     @extend .padInline;
     display: flex;
     @include screenWidth($tablet) {
       display: block;
     }
   }
-  .heading{
+  .heading {
     display: flex;
     flex-direction: column;
     width: 15%;
@@ -404,7 +407,7 @@ header {
       width: 100%;
       padding-bottom: 3rem;
     }
-    a{
+    a {
       font-size: 1.6rem;
       font-weight: 700;
       line-height: 1.5em;
@@ -418,12 +421,13 @@ header {
         margin: 0;
         font-size: 1.2rem;
       }
-      &::after{
-        content: '';
+      &::after {
+        content: "";
         display: inline-block;
         width: 2rem;
         aspect-ratio: 1;
-        background: $blue_00 url(../../images/icon_chevron_W.svg) center / 1.5rem auto;
+        background: $blue_00 url(../../images/icon_chevron_W.svg) center /
+          1.5rem auto;
         border-radius: 50%;
         vertical-align: middle;
         margin-left: 0.5rem;
@@ -433,7 +437,7 @@ header {
       }
     }
   }
-  .event-swiper{
+  .event-swiper {
     flex: 1;
     margin-left: auto;
     margin-right: 0;
@@ -441,40 +445,40 @@ header {
   }
 }
 /************** NOTICE *************/
-#notice{
+#notice {
   @extend .contentPb;
-  > div{
+  > div {
     @extend .padInline;
     text-align: center;
   }
-  .board{
+  .board {
     width: 100%;
     padding-top: 3.2rem;
     display: flex;
     justify-content: space-between;
     gap: 1.5rem;
-    @include screenWidth($tablet){
+    @include screenWidth($tablet) {
       flex-direction: column;
     }
-    li{
+    li {
       width: 33.3%;
-      @include screenWidth($tablet){
+      @include screenWidth($tablet) {
         width: 100%;
       }
-      a{
+      a {
         display: block;
         padding: 3.2rem;
         background-color: $blue_f5;
         border-radius: 2rem;
         transition: 0.35s;
-        &:hover{
+        &:hover {
           box-shadow: 0 0 3rem rgba($color: #000000, $alpha: 0.1);
         }
-        @include screenWidth($tablet){
+        @include screenWidth($tablet) {
           padding: 2rem;
         }
       }
-      h3{
+      h3 {
         font-size: 2rem;
         font-weight: 700;
         line-height: 1em;
@@ -484,18 +488,18 @@ header {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        @include screenWidth($tablet){
+        @include screenWidth($tablet) {
           font-size: 1.8rem;
           padding-bottom: 1rem;
         }
-        @include screenWidth($tablet_s){
+        @include screenWidth($tablet_s) {
           font-size: 1.6rem;
         }
       }
-      span{
+      span {
         font-size: 1.6rem;
         color: $gray_99;
-        @include screenWidth($tablet){
+        @include screenWidth($tablet) {
           font-size: 1.4rem;
         }
       }
@@ -504,26 +508,26 @@ header {
 }
 
 /************** COMMUNITY *************/
-#community{
+#community {
   @extend .contentPb;
-  > div{
+  > div {
     @extend .padInline;
     text-align: center;
-    .heading-title{
+    .heading-title {
       letter-spacing: 0.1rem;
     }
   }
-  .board{
+  .board {
     padding-top: 6rem;
     display: grid;
     gap: 1.5rem;
     // grid-template-columns: repeat(5, 1fr);
     grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
-    @include screenWidth($tablet){
+    @include screenWidth($tablet) {
       grid-template-columns: repeat(2, 1fr);
     }
-    li{
-      a{
+    li {
+      a {
         display: flex;
         align-items: center;
         gap: 1.5rem;
@@ -531,39 +535,232 @@ header {
         padding: 2.5rem 3rem;
         border-radius: 2rem;
         transition: 0.35s;
-        &:hover{
+        &:hover {
           border: 0.1rem solid #000;
           box-shadow: 0 0 2rem rgba($color: #000000, $alpha: 0.1);
         }
-        @include screenWidth($tablet){
+        @include screenWidth($tablet) {
           padding: 1.5rem;
           border-radius: 1rem;
         }
-        @include screenWidth($tablet_s){
+        @include screenWidth($tablet_s) {
           padding: 1rem;
         }
-        img{
+        img {
           width: 2.5rem;
-          @include screenWidth($tablet){
+          @include screenWidth($tablet) {
             width: 2rem;
           }
         }
-        h3{
+        h3 {
           font-size: 1.8rem;
           font-weight: 800;
           line-height: 1em;
           padding-right: 2rem;
           flex: 1;
           text-align: left;
-          background: url(../../images/icon_chevron_R.svg) no-repeat right center / 1.8rem auto;
-          @include screenWidth($tablet){
+          background: url(../../images/icon_chevron_R.svg) no-repeat right
+            center / 1.8rem auto;
+          @include screenWidth($tablet) {
             font-size: 1.6rem;
           }
-          @include screenWidth($tablet_s){
+          @include screenWidth($tablet_s) {
             font-size: 1.4rem;
           }
         }
       }
+    }
+  }
+}
+
+/************** FOOTER *************/
+footer {
+  .footer-top {
+    background-color: #000;
+    color: #fff;
+    > div {
+      @extend .padInline;
+      padding-block: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include screenWidth($tablet) {
+        flex-direction: column;
+      }
+    }
+    .footer-nav {
+      @include screenWidth($tablet) {
+        width: 100%;
+        padding-bottom: 1.5rem;
+        border-bottom: 0.1rem solid $gray_33;
+      }
+    }
+    .footer-nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6rem;
+      @include screenWidth(1400px) {
+        gap: 2rem;
+      }
+      @include screenWidth($tablet) {
+        justify-content: center;
+      }
+      a {
+        font-size: 1.6rem;
+        font-weight: 500;
+        display: inline-block;
+        white-space: nowrap;
+        @include screenWidth($tablet) {
+          font-size: 1.4rem;
+          line-height: 1;
+        }
+        @include screenWidth($tablet_s) {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .link-wrap {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      @include screenWidth($tablet) {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+      }
+      .sns {
+        flex: 1;
+        li {
+          display: inline-block;
+          margin-right: 2.4rem;
+        }
+        a {
+          $sns : (insta, youtube, ncafe);
+          @each $i in $sns {
+            &.icon-#{$i}{
+              background: url(../../images/icon_#{$i}_w.svg) no-repeat center / 100% auto;
+            }
+          }
+          display: inline-block;
+          width: 2.4rem;
+          aspect-ratio: 1;
+          @include screenWidth($tablet) {
+            width: 2rem;
+          }
+        }
+      }
+      .family{
+        position: relative;
+        &-list{
+          width: 100%;
+          height: 20rem;
+          padding: 0;
+          border: 0.1rem solid $gray_cf;
+          border-radius: 1rem 0 0 1rem;
+          overflow-y: scroll;
+          top: 105%;
+          left: 0;
+          a{
+            font-size: 1.4rem;
+            display: block;
+            padding: 1em;
+            @include screenWidth($tablet) {
+              font-size: 1.2rem;
+            }
+            @include screenWidth($tablet_s) {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom{
+    >div{
+      @extend .padInline;
+      padding-block: 6rem;
+      @include screenWidth($tablet) {
+        padding-block: 4rem;
+      }
+    }
+    .logo{
+      width: 18.5rem;
+      padding-bottom: 1rem;
+      @include screenWidth($tablet) {
+        margin: 0 auto;
+        width: 16rem;
+      }
+      @include screenWidth($tablet_s) {
+        width: 14rem;
+      }
+      a{
+        display: block;
+      }
+      img{
+        width: 100%;
+      }
+    }
+  }
+  .footer-info{
+    display: flex;
+    justify-content: space-between;
+    @include screenWidth($tablet) {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    &-inner{
+      p{
+        display: flex;
+        flex-wrap: wrap;
+        @include screenWidth($tablet) {
+          justify-content: center;
+        }
+      }
+      span{
+        padding-inline: 1em;
+        font-size: 1.4rem;
+        line-height: 1.5em;
+        white-space: nowrap;
+        position: relative;
+        @include screenWidth($tablet) {
+          padding-inline: 0.5em;
+        }
+        @include screenWidth($tablet_s) {
+          font-size: 1.2rem;
+        }
+        & + span{
+          &::before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            height: 70%;
+            border-left: 0.1rem solid $gray_dd;
+            @include screenWidth($tablet) {
+              height: 50%;
+            }
+          }
+        }
+        &:first-child{
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  .copyright{
+    font-size: 1.3rem;
+    letter-spacing: 0.3px;
+    color: $gray_99;
+    align-self: flex-end;
+    text-wrap: nowrap;
+    @include screenWidth($tablet) {
+      font-size: 1.4rem;
+      width: 100%;
+      text-align: center;
+    }
+    @include screenWidth($tablet_s) {
+      font-size: 1.2rem;
     }
   }
 }

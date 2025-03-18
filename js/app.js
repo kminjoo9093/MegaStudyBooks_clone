@@ -5,6 +5,7 @@ import {Tab} from "./ui/Tab.js";
 import {RenderPickTab, renderPickContents} from "./ui/Pick.js";
 import {renderBestSlideContent} from "./ui/Bestseller.js";
 import { renderEventSlideContent } from "./ui/Event.js";
+import { FamilySite } from "./ui/FamilySite.js";
 
 HeaderHeight();
 HandleMenuBtn();
@@ -19,3 +20,4 @@ renderBestSlideContent();
 YoutubeSlide();
 // EventSlide();
 renderEventSlideContent();
+FamilySite();
