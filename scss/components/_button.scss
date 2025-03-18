@@ -83,6 +83,13 @@
       }
     }
   }
+  @mixin controlsAlign {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    @content;
+  }
   .swiper-button-prev,
   .swiper-button-next {
     margin-top: 0;

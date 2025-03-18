@@ -169,20 +169,20 @@ img {
   margin: 0 auto;
 }
 
-.padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div, #bestseller > div, #youtube > div, #notice > div, #community > div {
+.padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div, #bestseller > div, #youtube > div, #event > div, #notice > div, #community > div {
   padding-inline: 3rem;
 }
 @media (max-width: 990px) {
-  .padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div, #bestseller > div, #youtube > div, #notice > div, #community > div {
+  .padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div, #bestseller > div, #youtube > div, #event > div, #notice > div, #community > div {
     padding-inline: 2rem;
   }
 }
 
-.contentPb, #mega-pick, .main-banner, #youtube > div, #notice, #community {
+.contentPb, #mega-pick, .main-banner, #youtube > div, #event, #notice, #community {
   padding-bottom: 15rem;
 }
 @media (max-width: 990px) {
-  .contentPb, #mega-pick, .main-banner, #youtube > div, #notice, #community {
+  .contentPb, #mega-pick, .main-banner, #youtube > div, #event, #notice, #community {
     padding-bottom: 6.4rem;
   }
 }
@@ -583,6 +583,69 @@ header.open .gnb {
 }
 
 /************** EVENT *************/
+#event > div {
+  display: flex;
+}
+@media (max-width: 990px) {
+  #event > div {
+    display: block;
+  }
+}
+#event .heading {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+}
+@media (max-width: 990px) {
+  #event .heading {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 3rem;
+  }
+}
+#event .heading a {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5em;
+  display: inline-block;
+  margin-block: 4rem 12rem;
+}
+@media (max-width: 990px) {
+  #event .heading a {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 750px) {
+  #event .heading a {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+}
+#event .heading a::after {
+  content: "";
+  display: inline-block;
+  width: 2rem;
+  aspect-ratio: 1;
+  background: #0082FF url(../../images/icon_chevron_W.svg) center/1.5rem auto;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+@media (max-width: 990px) {
+  #event .heading a::after {
+    width: 1.5rem;
+  }
+}
+#event .event-swiper {
+  flex: 1;
+  margin-left: auto;
+  margin-right: 0;
+  max-width: 110rem;
+}
+
 /************** NOTICE *************/
 #notice > div {
   text-align: center;
@@ -1009,7 +1072,7 @@ header.open .nav-icons .btn-menu span:last-child {
   }
 }
 #mega-pick .pick-swiper .swiper-controls {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
@@ -1103,25 +1166,115 @@ header.open .nav-icons .btn-menu span:last-child {
 }
 
 /************** YOUTUBE *************/
-.youtube-swiper {
+#youtube .youtube-swiper {
   padding-top: 3.2rem;
 }
-.youtube-swiper .swiper-wrapper.block {
+#youtube .youtube-swiper .swiper-wrapper.block {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-
-.swiper-controls {
+#youtube .swiper-controls {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
 }
 @media (max-width: 990px) {
-  .swiper-controls {
+  #youtube .swiper-controls {
     display: none;
   }
+}
+
+/************** EVENT *************/
+#event .swiper-controls {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+@media (max-width: 990px) {
+  #event .swiper-controls {
+    display: none;
+  }
+}
+#event .swiper-controls button {
+  position: static;
+  border: 0.2rem solid #000;
+}
+@media (max-width: 990px) {
+  #event .swiper-controls button {
+    display: none;
+  }
+}
+#event .event-swiper .swiper-wrapper.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 1rem;
+}
+#event .event-swiper .swiper-wrapper.grid .swiper-slide a {
+  width: 100%;
+}
+#event .event-swiper .swiper-wrapper.grid .swiper-slide a .badge {
+  order: 2;
+  margin-top: 1rem;
+}
+#event .event-swiper .swiper-wrapper.grid .swiper-slide a .event-title {
+  order: 3;
+}
+#event .event-swiper a {
+  display: flex;
+  flex-direction: column;
+}
+#event .event-swiper .badge {
+  align-self: flex-start;
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border: 0.1rem solid #000;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+@media (max-width: 990px) {
+  #event .event-swiper .badge {
+    font-size: 1.4rem;
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 750px) {
+  #event .event-swiper .badge {
+    font-size: 1.3rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+#event .event-swiper .event-title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.4em;
+  letter-spacing: -0.5px;
+  padding-block: 1.5rem 4.5rem;
+}
+@media (max-width: 990px) {
+  #event .event-swiper .event-title {
+    font-size: 1.8rem;
+    padding-block: 1.5rem 2.5rem;
+  }
+}
+@media (max-width: 750px) {
+  #event .event-swiper .event-title {
+    font-size: 1.6rem;
+    padding-block: 1rem;
+  }
+}
+#event .event-swiper .event-img {
+  border-radius: 2rem;
+  overflow: hidden;
+}
+#event .event-swiper .event-img img {
+  width: 100%;
 }
 
 /************** Tab : MEGA PICK *************/

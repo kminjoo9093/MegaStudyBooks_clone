@@ -383,6 +383,63 @@ header {
   }
 }
 /************** EVENT *************/
+#event{
+  @extend .contentPb;
+  > div{
+    @extend .padInline;
+    display: flex;
+    @include screenWidth($tablet) {
+      display: block;
+    }
+  }
+  .heading{
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    // padding-right: 3rem;
+    @include screenWidth($tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding-bottom: 3rem;
+    }
+    a{
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.5em;
+      display: inline-block;
+      margin-block: 4rem 12rem;
+      @include screenWidth($tablet) {
+        margin: 0;
+        font-size: 1.4rem;
+      }
+      @include screenWidth($tablet_s) {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+      &::after{
+        content: '';
+        display: inline-block;
+        width: 2rem;
+        aspect-ratio: 1;
+        background: $blue_00 url(../../images/icon_chevron_W.svg) center / 1.5rem auto;
+        border-radius: 50%;
+        vertical-align: middle;
+        margin-left: 0.5rem;
+        @include screenWidth($tablet) {
+          width: 1.5rem;
+        }
+      }
+    }
+  }
+  .event-swiper{
+    flex: 1;
+    margin-left: auto;
+    margin-right: 0;
+    max-width: 110rem;
+  }
+}
 /************** NOTICE *************/
 #notice{
   @extend .contentPb;

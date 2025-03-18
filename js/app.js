@@ -4,6 +4,7 @@ import {VisualSlide, PickSlide1, PickSlide2, BannerSlide, YoutubeSlide} from "./
 import {Tab} from "./ui/Tab.js";
 import {RenderPickTab, renderPickContents} from "./ui/Pick.js";
 import {renderBestSlideContent} from "./ui/Bestseller.js";
+import { renderEventSlideContent } from "./ui/Event.js";
 
 HeaderHeight();
 HandleMenuBtn();
@@ -16,3 +17,5 @@ BannerSlide();
 Tab('.bestseller-tab');
 renderBestSlideContent();
 YoutubeSlide();
+// EventSlide();
+renderEventSlideContent();

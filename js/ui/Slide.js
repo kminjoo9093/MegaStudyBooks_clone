@@ -236,3 +236,49 @@ export const YoutubeSlide = () => {
     ViewMore("#youtube", ".youtube-swiper", 2);
   }
 };
+
+//event slide
+export const EventSlide = ()=>{
+  const eventSlideWrap = document.querySelector('.event-swiper .swiper-wrapper');
+  let swiper7;
+  function initializeSwiper() {
+    swiper7 = new Swiper(".event-swiper", {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: "#event .swiper-button-next",
+        prevEl: "#event .swiper-button-prev",
+      },
+      breakpoints: {
+        990: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        750: {
+          slidesPerView: 1.8,
+          spaceBetween: 10,
+        },
+      },
+    });
+  }
+  window.addEventListener('load', ()=>{
+    initializeSwiper();
+    if(window.innerWidth < 750){
+      removeSwiper();
+    }
+  })
+
+  window.addEventListener("resize", () => {
+    if(window.innerWidth < 750){
+      removeSwiper();
+    } else {
+      initializeSwiper();
+      eventSlideWrap.classList.remove('grid');
+    }
+  });
+
+  const removeSwiper = ()=>{
+    swiper7.destroy();
+    eventSlideWrap.classList.add('grid');
+  }
+}
