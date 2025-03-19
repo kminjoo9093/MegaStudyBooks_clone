@@ -41,23 +41,30 @@ export const VisualSlide = () => {
       observe: true,
       centeredSlides: true,
       pagination: {
-        el: ".swiper-pagination",
-        type: "fraction",
-        renderFraction: function (currentClass, totalClass) {
-          return (
-            '<span class="' +
-            currentClass +
-            '"></span>' +
-            " | " +
-            '<span class="' +
-            totalClass +
-            '"></span>'
-          );
-        },
+        el: "#visual .swiper-pagination",
       },
       navigation: {
         nextEl: "#visual .swiper-button-next",
         prevEl: "#visual .swiper-button-prev",
+      },
+      breakpoints: {
+        990: {
+          pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+            renderFraction: function (currentClass, totalClass) {
+              return (
+                '<span class="' +
+                currentClass +
+                '"></span>' +
+                " | " +
+                '<span class="' +
+                totalClass +
+                '"></span>'
+              );
+            },
+          },
+        },
       },
     });
   }
@@ -114,12 +121,12 @@ export const PickSlide2 = () => {
     });
   }
 
-  window.addEventListener('load', ()=>{
+  window.addEventListener("load", () => {
     initializeSwiper();
     if (window.innerWidth <= 750) {
       addGrid();
     }
-  })
+  });
 
   window.addEventListener("resize", () => {
     if (window.innerWidth <= 750) {
@@ -238,8 +245,10 @@ export const YoutubeSlide = () => {
 };
 
 //event slide
-export const EventSlide = ()=>{
-  const eventSlideWrap = document.querySelector('.event-swiper .swiper-wrapper');
+export const EventSlide = () => {
+  const eventSlideWrap = document.querySelector(
+    ".event-swiper .swiper-wrapper"
+  );
   let swiper7;
   function initializeSwiper() {
     swiper7 = new Swiper(".event-swiper", {
@@ -261,24 +270,24 @@ export const EventSlide = ()=>{
       },
     });
   }
-  window.addEventListener('load', ()=>{
+  window.addEventListener("load", () => {
     initializeSwiper();
-    if(window.innerWidth < 750){
+    if (window.innerWidth < 750) {
       removeSwiper();
-    }
-  })
-
-  window.addEventListener("resize", () => {
-    if(window.innerWidth < 750){
-      removeSwiper();
-    } else {
-      initializeSwiper();
-      eventSlideWrap.classList.remove('grid');
     }
   });
 
-  const removeSwiper = ()=>{
+  window.addEventListener("resize", () => {
+    if (window.innerWidth < 750) {
+      removeSwiper();
+    } else {
+      initializeSwiper();
+      eventSlideWrap.classList.remove("grid");
+    }
+  });
+
+  const removeSwiper = () => {
     swiper7.destroy();
-    eventSlideWrap.classList.add('grid');
-  }
-}
+    eventSlideWrap.classList.add("grid");
+  };
+};

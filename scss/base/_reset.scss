@@ -39,7 +39,7 @@ figcaption {
 }
 
 /* 레이아웃 */
-body { overflow-x:hidden;}
+html,body { overflow-x:hidden;}
 body.hidden { position: fixed; overflow-y:hidden;  touch-action: none;}
 .hide {overflow: hidden; display:block; position:absolute; border: 0; width: 1px; height: 1px; clip: rect(1px, 1px, 1px, 1px);}
 

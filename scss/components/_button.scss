@@ -161,3 +161,49 @@
     padding-inline: 1em;
   }
 }
+
+//맞춤도서 버튼
+.btn-quickSearch{
+  width: 10rem;
+  aspect-ratio: 1;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 999;
+  border: 0.2rem solid $blue_00;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  box-shadow: 0 2rem 3rem rgba($color: #000000, $alpha: 0.1);
+  @include screenWidth($tablet) {
+    width: 6.5rem;
+    aspect-ratio: 1;
+    gap: 0.5rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  @include screenWidth($tablet_s) {
+    scale: 0.85;
+  }
+  i{
+    display: block;
+    width: 3.2rem;
+    aspect-ratio: 1;
+    background: url(../../images/icon-quickSearch.svg) no-repeat center / 100% auto;
+    @include screenWidth($tablet) {
+      width: 2.4rem;
+    }
+  }
+  span{
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $blue_00;
+    @include screenWidth($tablet) {
+      font-size: 1.2rem;
+    }
+  }
+}

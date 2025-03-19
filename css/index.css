@@ -42,6 +42,11 @@ body {
     font-size: 2.4rem;
   }
 }
+@media (max-width: 450px) {
+  .heading-title {
+    font-size: 2.1rem;
+  }
+}
 
 /* border-box 초기화 */
 *,
@@ -84,7 +89,7 @@ figcaption {
 }
 
 /* 레이아웃 */
-body {
+html, body {
   overflow-x: hidden;
 }
 
@@ -170,11 +175,11 @@ img {
   margin: 0 auto;
 }
 
-.padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div, #bestseller > div, #youtube > div, #event > div, #notice > div, #community > div, footer .footer-top > div, footer .footer-bottom > div {
+.padInline, .popup a, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div, #bestseller > div, #youtube > div, #event > div, #notice > div, #community > div, footer .footer-top > div, footer .footer-bottom > div {
   padding-inline: 3rem;
 }
 @media (max-width: 990px) {
-  .padInline, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div, #bestseller > div, #youtube > div, #event > div, #notice > div, #community > div, footer .footer-top > div, footer .footer-bottom > div {
+  .padInline, .popup a, #visual .visual-swiper, .main-header-inner, .utility-inner, #quick ul, #mega-pick .pick-inner, .main-banner > div, #bestseller > div, #youtube > div, #event > div, #notice > div, #community > div, footer .footer-top > div, footer .footer-bottom > div {
     padding-inline: 2rem;
   }
 }
@@ -380,25 +385,25 @@ header.open .gnb {
 #quick ul li:hover {
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);
 }
-#quick ul li:nth-child(1) a {
+#quick ul li:nth-child(1) .quick-icon {
   background-image: url(../../images/icon-quick1.svg);
 }
-#quick ul li:nth-child(2) a {
+#quick ul li:nth-child(2) .quick-icon {
   background-image: url(../../images/icon-quick2.svg);
 }
-#quick ul li:nth-child(3) a {
+#quick ul li:nth-child(3) .quick-icon {
   background-image: url(../../images/icon-quick3.svg);
 }
-#quick ul li:nth-child(4) a {
+#quick ul li:nth-child(4) .quick-icon {
   background-image: url(../../images/icon-quick4.svg);
 }
-#quick ul li:nth-child(5) a {
+#quick ul li:nth-child(5) .quick-icon {
   background-image: url(../../images/icon-quick5.svg);
 }
-#quick ul li:nth-child(6) a {
+#quick ul li:nth-child(6) .quick-icon {
   background-image: url(../../images/icon-quick6.svg);
 }
-#quick ul li:nth-child(7) a {
+#quick ul li:nth-child(7) .quick-icon {
   background-image: url(../../images/icon-quick7.svg);
 }
 #quick ul a {
@@ -406,19 +411,23 @@ header.open .gnb {
   font-weight: 600;
   text-wrap: nowrap;
   display: flex;
-  justify-content: center;
-  align-items: end;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
   width: 100%;
   aspect-ratio: 1;
   padding: 3.5rem 2rem;
+}
+#quick ul .quick-icon {
+  width: 6rem;
+  aspect-ratio: 1;
   background-repeat: no-repeat;
-  background-position: center top 3rem;
-  background-size: 6rem auto;
+  background-position: center;
+  background-size: 100% auto;
 }
 @media (max-width: 990px) {
   #quick ul {
     grid-template-columns: repeat(auto-fit, 12rem);
-    gap: 1rem;
   }
   #quick ul li {
     border-radius: 1rem;
@@ -430,25 +439,46 @@ header.open .gnb {
     font-size: 1.4rem;
     text-wrap: wrap;
     padding: 2.5rem;
-    background-size: 4.8rem auto;
+  }
+  #quick ul .quick-icon {
+    width: 4.8rem;
   }
 }
 @media (max-width: 570px) {
   #quick ul {
-    grid-template-columns: repeat(auto-fit, 10rem);
+    grid-template-columns: repeat(auto-fit, 9rem);
   }
   #quick ul a {
     font-size: 1.3rem;
-    padding: 1.5rem 2rem;
-    background-position: center top 1.5rem;
-    background-size: 4rem auto;
+    padding: 1rem;
     text-align: center;
+  }
+  #quick ul .quick-icon {
+    width: 4rem;
+  }
+}
+@media (max-width: 450px) {
+  #quick ul {
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+    gap: 0;
+  }
+  #quick ul a {
+    padding: 0.7rem;
+    font-size: 1.2rem;
+  }
+  #quick ul .quick-icon {
+    width: 3.5rem;
   }
 }
 
 /************** SECTION : MEGA PICK *************/
 #mega-pick {
   margin-top: 4rem;
+}
+@media (max-width: 450px) {
+  #mega-pick {
+    margin-top: 2rem;
+  }
 }
 #mega-pick .pick-inner {
   overflow: hidden;
@@ -460,6 +490,11 @@ header.open .gnb {
 @media (max-width: 750px) {
   #mega-pick .btn-more {
     display: block;
+  }
+}
+@media (max-width: 450px) {
+  #mega-pick .btn-more {
+    margin-top: 1rem;
   }
 }
 
@@ -574,6 +609,11 @@ header.open .gnb {
 #youtube > div {
   padding-top: 15rem;
 }
+@media (max-width: 570px) {
+  #youtube > div {
+    padding-top: 5rem;
+  }
+}
 #youtube .heading {
   display: flex;
   justify-content: space-between;
@@ -609,6 +649,11 @@ header.open .gnb {
     align-items: center;
     width: 100%;
     padding-bottom: 3rem;
+  }
+}
+@media (max-width: 450px) {
+  #event .heading {
+    padding-bottom: 2.4rem;
   }
 }
 #event .heading a {
@@ -666,6 +711,11 @@ header.open .gnb {
 @media (max-width: 990px) {
   #notice .board {
     flex-direction: column;
+  }
+}
+@media (max-width: 450px) {
+  #notice .board {
+    padding-top: 2.4rem;
   }
 }
 #notice .board li {
@@ -741,6 +791,16 @@ header.open .gnb {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+@media (max-width: 570px) {
+  #community .board {
+    padding-top: 3.2rem;
+  }
+}
+@media (max-width: 450px) {
+  #community .board {
+    padding-top: 2.4rem;
+  }
+}
 #community .board li a {
   display: flex;
   align-items: center;
@@ -763,6 +823,11 @@ header.open .gnb {
 @media (max-width: 750px) {
   #community .board li a {
     padding: 1rem;
+  }
+}
+@media (max-width: 450px) {
+  #community .board li a {
+    gap: 1rem;
   }
 }
 #community .board li a img {
@@ -790,6 +855,11 @@ header.open .gnb {
 @media (max-width: 750px) {
   #community .board li a h3 {
     font-size: 1.4rem;
+  }
+}
+@media (max-width: 450px) {
+  #community .board li a h3 {
+    font-size: 1.2rem;
   }
 }
 
@@ -867,6 +937,11 @@ footer .footer-top .link-wrap .sns li {
   display: inline-block;
   margin-right: 2.4rem;
 }
+@media (max-width: 570px) {
+  footer .footer-top .link-wrap .sns li {
+    margin-right: 1.5rem;
+  }
+}
 footer .footer-top .link-wrap .sns a {
   display: inline-block;
   width: 2.4rem;
@@ -898,6 +973,7 @@ footer .footer-top .link-wrap .family-list {
   overflow-y: scroll;
   top: 105%;
   left: 0;
+  z-index: 999;
 }
 footer .footer-top .link-wrap .family-list a {
   font-size: 1.4rem;
@@ -1182,6 +1258,59 @@ header.open .nav-icons .btn-menu span:last-child {
   }
 }
 
+.btn-quickSearch {
+  width: 10rem;
+  aspect-ratio: 1;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 999;
+  border: 0.2rem solid #0082FF;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 990px) {
+  .btn-quickSearch {
+    width: 6.5rem;
+    aspect-ratio: 1;
+    gap: 0.5rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}
+@media (max-width: 750px) {
+  .btn-quickSearch {
+    scale: 0.85;
+  }
+}
+.btn-quickSearch i {
+  display: block;
+  width: 3.2rem;
+  aspect-ratio: 1;
+  background: url(../../images/icon-quickSearch.svg) no-repeat center/100% auto;
+}
+@media (max-width: 990px) {
+  .btn-quickSearch i {
+    width: 2.4rem;
+  }
+}
+.btn-quickSearch span {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0082FF;
+}
+@media (max-width: 990px) {
+  .btn-quickSearch span {
+    font-size: 1.2rem;
+  }
+}
+
 /************** SWIPER COMMON STYLE *************/
 .swiper .swiper-pagination-progressbar-fill {
   background-color: #000;
@@ -1219,9 +1348,18 @@ header.open .nav-icons .btn-menu span:last-child {
 }
 @media (max-width: 990px) {
   #visual .swiper .swiper-button-prev,
-  #visual .swiper .swiper-button-next,
-  #visual .swiper .swiper-pagination {
+  #visual .swiper .swiper-button-next {
     display: none;
+  }
+}
+@media (max-width: 990px) {
+  #visual .swiper .swiper-pagination {
+    width: 100%;
+    padding-block: 1rem;
+    bottom: 0;
+    right: 50%;
+    transform: translate(50%, 100%);
+    background-color: transparent;
   }
 }
 
@@ -1302,6 +1440,11 @@ header.open .nav-icons .btn-menu span:last-child {
 @media (max-width: 990px) {
   #mega-pick .pick-swiper figure {
     padding: 25% 30%;
+  }
+}
+@media (max-width: 570px) {
+  #mega-pick .pick-swiper figure {
+    padding: 15% 25%;
   }
 }
 #mega-pick .pick-swiper figure img {
@@ -1432,6 +1575,11 @@ header.open .nav-icons .btn-menu span:last-child {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+@media (max-width: 450px) {
+  #youtube .youtube-swiper {
+    padding-top: 2.4rem;
+  }
 }
 #youtube .swiper-controls {
   display: inline-flex;
@@ -1564,6 +1712,100 @@ header.open .nav-icons .btn-menu span:last-child {
   .tab-hash button {
     font-size: 1.4rem;
   }
+}
+
+.popup {
+  width: 100%;
+  position: fixed;
+  bottom: -30rem;
+  z-index: 999;
+}
+.popup.show {
+  animation: popupShow 1.5s linear forwards;
+}
+.popup a {
+  display: block;
+  position: relative;
+}
+@media (max-width: 990px) {
+  .popup a {
+    padding: 0;
+    max-width: 50rem;
+  }
+}
+.popup a img {
+  width: 100%;
+  display: none;
+}
+.popup a img.show {
+  display: block;
+}
+.popup a span {
+  position: absolute;
+  bottom: 1rem;
+  left: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 10;
+}
+@media (max-width: 990px) {
+  .popup a span {
+    left: 1rem;
+  }
+}
+.popup a span input[type=checkbox] {
+  appearance: none;
+  width: 1.7rem;
+  aspect-ratio: 1;
+  border: 0.1rem solid #CFCFCF;
+  border-radius: 0.2rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+.popup a span input[type=checkbox]:focus {
+  border: 0.1rem solid #0082FF;
+}
+.popup a span input[type=checkbox]:checked {
+  background: #0082FF url(../../images/icon_check_w.svg) no-repeat center/cover;
+  border: 0.1rem solid #fff;
+}
+.popup a span label {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.popup a .popup-close {
+  position: absolute;
+  top: 5rem;
+  right: 4.5rem;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  margin: 1rem;
+}
+@media (max-width: 990px) {
+  .popup a .popup-close {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+.popup a .popup-close img {
+  width: 100%;
+  display: block;
+  opacity: 0.7;
+}
+
+@keyframes popupShow {
+  0% {
+    opacity: 0;
+    bottom: -30rem;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+input:focus {
+  outline: 0.3rem solid rgba(0, 130, 255, 0.2);
 }
 
 /*# sourceMappingURL=index.css.map */

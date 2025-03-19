@@ -1,0 +1,7 @@
+@use "../abstracts/" as *;
+
+input{
+  &:focus{
+    outline: .3rem solid rgba($color: $blue_00, $alpha: 0.2);
+  }
+}
