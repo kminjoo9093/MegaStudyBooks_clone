@@ -1,5 +1,7 @@
 export const Popup = ()=>{
   const popup = document.querySelector('.popup');
+  if(!popup) return;
+  
   const popupLink = popup.querySelector('a');
   const closeBtn = document.querySelector('.popup-close');
   const imgPc = document.querySelector('.popup-img_pc');

@@ -6,6 +6,6 @@ export const HeaderHeight = ()=>{
   
     container.style.setProperty('--headerHeight', `${headerHeight/10}rem`);
   }
-
+  setMarginTop();
   window.addEventListener('resize', setMarginTop);
 }

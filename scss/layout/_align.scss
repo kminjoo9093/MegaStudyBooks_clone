@@ -1,7 +1,7 @@
 @use "../abstracts/" as *;
 
 #container {
-  margin-top: var(--headerHeight, 12rem);
+  margin-top: var(--headerHeight);
 }
 
 .web-center {

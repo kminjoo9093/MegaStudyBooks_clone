@@ -207,3 +207,74 @@
     }
   }
 }
+
+// login 버튼
+#signin{
+  .btn-area{
+    text-align: right;
+    button{
+      width: 9rem;
+      height: 9rem;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      transition: 0.35s;
+      @include screenWidth(1024px){
+        width: 100%;
+        height: auto;
+        line-height: 2.5em;
+        border-radius: 2.5rem;
+        margin-top: 3.2rem;
+        font-size: 1.6rem;
+      }
+      @include screenWidth($mobile_s){
+        margin-top: 2.5rem;
+      }
+    }
+    .btn-login{
+      background-color: $blue_00;
+      color: #fff;
+      margin-right: auto;
+      &:hover{
+        filter: brightness(0.9);
+      }
+    }
+    .btn-signup{
+      border: 0.1rem solid $blue_00;
+      color: $blue_00;
+      &:hover{
+        color: #fff;
+        background-color: $blue_00;
+      }
+    }
+  } 
+}
+
+//간편로그인 버튼
+.easy-btns{
+  display: flex;
+  gap: 1rem;
+  @include screenWidth($tablet){
+    flex-direction: column;
+  }
+  button{
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2.5em;
+    border-radius: 2.5rem;
+    border: 0.1rem solid $gray_cf;
+    padding-inline: 4rem;
+    @include screenWidth($tablet){
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+    @include screenWidth($tablet_s){
+      font-size: 1.4rem;
+    }
+    @include screenWidth($mobile_s){
+      font-size: 1.2rem;
+      padding-inline: 3rem;
+    }
+  }
+}

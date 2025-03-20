@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css");
 /*********** header vars ***********/
 :root {
@@ -13,7 +14,6 @@
 html {
   font-size: 62.5%;
 }
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 1rem;
@@ -45,6 +45,31 @@ body {
 @media (max-width: 450px) {
   .heading-title {
     font-size: 2.1rem;
+  }
+}
+
+.login-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 4rem;
+  line-height: 1.5em;
+  margin-bottom: 3.2rem;
+}
+@media (max-width: 990px) {
+  .login-title {
+    font-size: 3.2rem;
+  }
+}
+@media (max-width: 750px) {
+  .login-title {
+    font-size: 2.4rem;
+    margin-bottom: 2.5rem;
+  }
+}
+@media (max-width: 450px) {
+  .login-title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
   }
 }
 
@@ -167,7 +192,7 @@ img {
 }
 
 #container {
-  margin-top: var(--headerHeight, 12rem);
+  margin-top: var(--headerHeight);
 }
 
 .web-center {
@@ -1092,6 +1117,258 @@ footer .copyright {
   }
 }
 
+#signin > div {
+  max-width: 126rem;
+  margin: 0 auto;
+  padding-block: 10rem 12rem;
+}
+@media (max-width: 1024px) {
+  #signin > div {
+    padding-inline: 3rem;
+  }
+}
+@media (max-width: 990px) {
+  #signin > div {
+    padding-block: 6rem;
+    padding-inline: 2rem;
+  }
+}
+@media (max-width: 570px) {
+  #signin > div {
+    padding-block: 4rem;
+  }
+}
+#signin .signin-top {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 6rem;
+}
+@media (max-width: 1024px) {
+  #signin .signin-top {
+    flex-direction: column;
+  }
+}
+@media (max-width: 750px) {
+  #signin .signin-top {
+    margin-bottom: 4rem;
+  }
+}
+#signin .signin-top:after {
+  content: "";
+  width: 0.1rem;
+  height: 100%;
+  background-color: #CFCFCF;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+@media (max-width: 1024px) {
+  #signin .signin-top:after {
+    display: none;
+  }
+}
+#signin .signin-top > div {
+  width: 45%;
+  min-width: 50rem;
+  flex-shrink: 0;
+}
+@media (max-width: 1024px) {
+  #signin .signin-top > div {
+    width: 100%;
+    min-width: fit-content;
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+}
+#signin .login-box {
+  padding-inline: 3rem;
+}
+@media (max-width: 1024px) {
+  #signin .login-box {
+    padding-bottom: 5rem;
+    padding-inline: 0;
+    border-bottom: 0.1rem solid #CFCFCF;
+  }
+}
+@media (max-width: 750px) {
+  #signin .login-box {
+    padding-bottom: 4rem;
+  }
+}
+#signin .login-box label[for=id],
+#signin .login-box label[for=pw] {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 2.4rem;
+}
+@media (max-width: 990px) {
+  #signin .login-box label[for=id],
+  #signin .login-box label[for=pw] {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+}
+#signin .login-box input[type=text],
+#signin .login-box input[type=password] {
+  font-size: 1.6rem;
+  border: none;
+  border-bottom: 0.1rem solid #CFCFCF;
+  width: 100%;
+  padding-block: 1rem;
+  transition: 0.35s;
+}
+#signin .login-box input[type=text]:focus,
+#signin .login-box input[type=password]:focus {
+  border-color: transparent;
+}
+#signin .login-box input[type=text]::placeholder,
+#signin .login-box input[type=password]::placeholder {
+  font-size: 1.6rem;
+}
+#signin .login-box input[type=text][type=text],
+#signin .login-box input[type=password][type=text] {
+  margin-bottom: 3.2rem;
+}
+#signin .login-box .save-line {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 990px) {
+  #signin .login-box .save-line {
+    font-size: 1.4rem;
+  }
+}
+#signin .login-box .save-line input[type=checkbox] {
+  appearance: none;
+  width: 1.8rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 0.1rem solid #CFCFCF;
+  margin-right: 0.5rem;
+}
+#signin .login-box .save-line label {
+  margin-right: 2rem;
+}
+#signin .login-box .save-line a {
+  color: #666666;
+  padding-inline: 0.5rem;
+}
+#signin .login-box .save-line a:first-of-type {
+  border-right: 0.1rem solid #CFCFCF;
+}
+#signin .signup-box {
+  padding-inline: 3rem;
+  position: relative;
+}
+@media (max-width: 1024px) {
+  #signin .signup-box {
+    padding-top: 4rem;
+    padding-inline: 0;
+  }
+}
+#signin .signup-box p {
+  font-size: 1.6rem;
+  line-height: 1.5em;
+  margin-bottom: 2.4rem;
+}
+@media (max-width: 1024px) {
+  #signin .signup-box p {
+    margin-bottom: 3.2rem;
+  }
+}
+@media (max-width: 990px) {
+  #signin .signup-box p {
+    font-size: 1.4rem;
+  }
+}
+#signin .signup-box img {
+  display: block;
+  max-width: 27rem;
+}
+@media (max-width: 1024px) {
+  #signin .signup-box img {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 450px) {
+  #signin .signup-box img {
+    max-width: 18rem;
+  }
+}
+#signin .signup-box .btn-area {
+  flex: 1;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+@media (max-width: 1024px) {
+  #signin .signup-box .btn-area {
+    position: static;
+  }
+}
+#signin .easy-box {
+  border-top: 0.2rem solid #000;
+  padding-block: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+@media (max-width: 990px) {
+  #signin .easy-box {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+@media (max-width: 570px) {
+  #signin .easy-box {
+    padding-bottom: 0;
+  }
+}
+#signin .easy-box h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+@media (max-width: 990px) {
+  #signin .easy-box h3 {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 750px) {
+  #signin .easy-box h3 {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 450px) {
+  #signin .easy-box h3 {
+    font-size: 1.2rem;
+  }
+}
+#signin .easy-box .easy-btns i {
+  display: inline-block;
+  width: 3.6rem;
+  aspect-ratio: 1;
+}
+#signin .easy-box .easy-btns i.easy-icon-kakao {
+  background: url(../../images/icon-kakao.svg) no-repeat center/100% auto;
+}
+#signin .easy-box .easy-btns i.easy-icon-naver {
+  background: url(../../images/icon-naver.svg) no-repeat center/100% auto;
+}
+#signin .easy-box .easy-btns i.easy-icon-google {
+  background: url(../../images/icon-google.svg) no-repeat center/100% auto;
+}
+@media (max-width: 990px) {
+  #signin .easy-box .easy-btns i {
+    width: 3rem;
+  }
+}
+
 .utility .search-form button {
   background: #0082FF url(../../images/icon_search.svg) no-repeat center/1.6rem auto;
   width: 3.6rem;
@@ -1311,6 +1588,85 @@ header.open .nav-icons .btn-menu span:last-child {
   }
 }
 
+#signin .btn-area {
+  text-align: right;
+}
+#signin .btn-area button {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  transition: 0.35s;
+}
+@media (max-width: 1024px) {
+  #signin .btn-area button {
+    width: 100%;
+    height: auto;
+    line-height: 2.5em;
+    border-radius: 2.5rem;
+    margin-top: 3.2rem;
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 450px) {
+  #signin .btn-area button {
+    margin-top: 2.5rem;
+  }
+}
+#signin .btn-area .btn-login {
+  background-color: #0082FF;
+  color: #fff;
+  margin-right: auto;
+}
+#signin .btn-area .btn-login:hover {
+  filter: brightness(0.9);
+}
+#signin .btn-area .btn-signup {
+  border: 0.1rem solid #0082FF;
+  color: #0082FF;
+}
+#signin .btn-area .btn-signup:hover {
+  color: #fff;
+  background-color: #0082FF;
+}
+
+.easy-btns {
+  display: flex;
+  gap: 1rem;
+}
+@media (max-width: 990px) {
+  .easy-btns {
+    flex-direction: column;
+  }
+}
+.easy-btns button {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.5em;
+  border-radius: 2.5rem;
+  border: 0.1rem solid #CFCFCF;
+  padding-inline: 4rem;
+}
+@media (max-width: 990px) {
+  .easy-btns button {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+}
+@media (max-width: 750px) {
+  .easy-btns button {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 450px) {
+  .easy-btns button {
+    font-size: 1.2rem;
+    padding-inline: 3rem;
+  }
+}
+
 /************** SWIPER COMMON STYLE *************/
 .swiper .swiper-pagination-progressbar-fill {
   background-color: #000;
@@ -1478,6 +1834,7 @@ header.open .nav-icons .btn-menu span:last-child {
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+  display: flex;
 }
 #mega-pick .pick-swiper .swiper-controls .swiper-pagination {
   position: static;
@@ -1805,7 +2162,7 @@ header.open .nav-icons .btn-menu span:last-child {
   }
 }
 input:focus {
-  outline: 0.3rem solid rgba(0, 130, 255, 0.2);
+  outline: 0.4rem solid rgba(0, 130, 255, 0.2);
 }
 
 /*# sourceMappingURL=index.css.map */

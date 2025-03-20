@@ -166,6 +166,7 @@
     }
     .swiper-controls {
       @include controlsAlign;
+      display: flex;
       .swiper-pagination {
         position: static;
       }

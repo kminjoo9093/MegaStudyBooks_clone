@@ -5,8 +5,8 @@ import { ViewMore } from "./ViewMore.js";
 // visual 영역 swiper
 export const VisualSlide = () => {
   const visual = document.querySelector("#visual");
+  if (!visual) return;
   const visualSlide = visual.querySelector(".swiper");
-  if (!visualSlide) return;
 
   const renderVisualSlide = (dataList = VisualData) => {
     const visualSlideWrap = document.querySelector(".swiper-wrapper");
