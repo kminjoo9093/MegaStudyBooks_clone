@@ -38,7 +38,7 @@ SCSS 사용으로 믹스인, 반복문 등을 통해 중복코드를 줄여 효�
 
   <img src="https://github.com/user-attachments/assets/32fb267e-df7c-463d-8221-67105eae0ae9" width="430" />
   <img src="https://github.com/user-attachments/assets/0da6cd37-fddb-41b7-a13a-b56ed313dbba" width="430" />
-<br><br>
+<br><br><br>
 [관련 코드]<br>
 1️⃣ GetClickedTab 함수에서 클릭되거나 active클래스를 가진 탭의 textContent를 콜백함수의 인자로 넣어주도록 한다.<br>
 2️⃣ 탭 컨텐츠를 렌더링하는 함수 내에서 GetClickedTab 함수를 호출하여 데이터리스트 중 인자로 받은 탭메뉴 텍스트와 카테고리가 일치하는 데이터만 선별한다.(filter메서드 활용)
@@ -97,7 +97,7 @@ export const RenderPickContents = (dataList = PickData) => {
 <img src="https://github.com/user-attachments/assets/448821d4-2f5e-4c3c-8e36-a2e30286322f" height="400" />
 <img src="https://github.com/user-attachments/assets/56bbd6b2-06e6-49f6-853b-0b5224b32aaa" height="350" />
 <img src="https://github.com/user-attachments/assets/63912fea-6894-4433-97bb-31a12bdbfced" height="400" />
-<br><br>
+<br><br><br>
 [관련 코드]<br>
 1️⃣ 코드의 재사용을 위해 section, slide, showNum을 인수로 받는 ViewMore 함수<br>
 2️⃣ handleViewMore 함수에서 showNum 개수만큼만 보이도록 하기 위해 각 슬라이드 인덱스가 showNum - 1 인 것만 보이도록 설정<br>
@@ -144,5 +144,107 @@ export const ViewMore = (section, slide, showNum) => {
   }
 ```
 
-이슈
-- swiper 스크린 크기에 반응하기
+<br><br>
+### 이슈
+**1. resize 이벤트 발생 시 swiper 오류 해결**<br>
+
+   ❎ 리사이즈 이벤트가 발생할 때 슬라이드가 고정되지 않고 넘어가듯이 보이는 현상<br>
+   ❎ 뷰포트 크기에 따른 적절한 이미지 변경이 안되는 현상<br>
+
+  **해결**<br>
+  1️⃣ swiper 인스턴스를 전역으로 선언<br>
+  2️⃣ swiper를 초기화 시키는 함수 만들어 호출<br>
+  3️⃣ resize 이벤트 발생 시 destroy()로 swiper를 삭제하고, 다시 초기화 함수 호출<br>
+  ❗️ 순서 중요 : 스와이퍼 삭제 -> 슬라이드 컨텐츠 불러오는 렌더링 함수 실행 -> 스와이퍼 재초기화<br>
+  
+```javascript
+//swiper instance 선언 함수
+function initializeSwiperInstance(selector, config) {
+  return new Swiper(selector, config);
+}
+
+//resize이벤트 핸들링 함수
+function handleSwiperResizeEvents(
+  swiper,
+  selector,
+  config,
+  callback1 = null,
+  callback2 = null,
+  callback3 = null
+) {
+ window.addEventListener("resize", () => {
+    if (callback1) {
+      callback1(selector, config);
+      return;
+    }
+    if (window.innerWidth <= 750) {
+      if (callback2) callback2();
+    } else {
+      swiper.destroy();
+      swiper = initializeSwiperInstance(selector, config);
+      if (callback3) callback3();
+    }
+  });
+}
+
+// visual 영역 swiper
+export const VisualSlide = () => {
+  const visual = document.querySelector("#visual");
+  if (!visual) return;
+  const visualSlide = visual.querySelector(".swiper");
+
+  let swiper1;  // 전역으로 선언
+  const visualConfig = {
+    slidesPerView: "auto",
+    spaceBetween: 80,
+    loop: true,
+    autoplay: {
+      delay: 4000,
+    },
+    observeParents: true,
+    observe: true,
+    centeredSlides: true,
+    pagination: {
+      el: "#visual .swiper-pagination",
+    },
+    navigation: {
+      nextEl: "#visual .swiper-button-next",
+      prevEl: "#visual .swiper-button-prev",
+    },
+    breakpoints: {
+      990: {
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+          renderFraction: function (currentClass, totalClass) {
+            return (
+              '<span class="' +
+              currentClass +
+              '"></span>' +
+              " | " +
+              '<span class="' +
+              totalClass +
+              '"></span>'
+            );
+          },
+        },
+      },
+    },
+  };
+
+  swiper1 = initializeSwiperInstance("#visual .swiper", visualConfig); //초기화 함수 호출
+
+  handelSwiperResizeEvents(  //리사이즈 이벤트 발생 시
+    swiper1,
+    "#visual .swiper",
+    visualConfig,
+    () => {          
+      swiper1.destroy();  // swiper 파괴
+      swiper1 = initializeSwiperInstance("#visual .swiper", visualConfig); // 초기화 함수 재호출로 swiper 새롭게 생성
+    },
+    null,
+    null
+  );
+};
+```
+
