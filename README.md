@@ -30,7 +30,7 @@ SCSS 사용으로 믹스인, 반복문 등을 통해 중복코드를 줄여 효�
 <br><br>
 ### 주요 기능
 
-- 탭메뉴 선택에 따른 컨텐츠 업데이트<br><br>
+**- 탭메뉴 선택에 따른 컨텐츠 업데이트**<br><br>
   <img src="https://github.com/user-attachments/assets/28c799a1-feef-4f31-8358-177850a7522f" width="430" />
   <img src="https://github.com/user-attachments/assets/d8e40913-e978-44e9-925c-8de43a86b100" width="430" />
 
@@ -40,7 +40,11 @@ SCSS 사용으로 믹스인, 반복문 등을 통해 중복코드를 줄여 효�
   <img src="https://github.com/user-attachments/assets/0da6cd37-fddb-41b7-a13a-b56ed313dbba" width="430" />
 <br><br>
 [관련 코드]<br>
+1️⃣ GetClickedTab 함수에서 클릭되거나 active클래스를 가진 탭의 textContent를 콜백함수의 인자로 넣어주도록 한다.<br>
+2️⃣ 탭 컨텐츠를 렌더링하는 함수 내에서 GetClickedTab 함수를 호출하여 데이터리스트 중 인자로 받은 탭메뉴 텍스트와 카테고리가 일치하는 데이터만 선별한다.(filter메서드 활용)
+<br>
 ```javascript
+//Tab.js
 export const GetClickedTab = (tabList, callback)=>{
   const tabs = document.querySelectorAll(tabList);
   [...tabs].forEach((tab)=>{
@@ -53,7 +57,8 @@ export const GetClickedTab = (tabList, callback)=>{
   })
 }
 
-xport const RenderPickContents = (dataList = PickData) => {
+//Pick.js
+export const RenderPickContents = (dataList = PickData) => {
   //클릭된 탭이랑 카테고리가 일치하는 컨텐츠만 필터해서 보이도록
   const pickContentsWrap = document.querySelector(
     ".pick-swiper .swiper-wrapper"
@@ -85,7 +90,3 @@ xport const RenderPickContents = (dataList = PickData) => {
   PickSlide2();
 };
 ```
-
-  
-
-스크린 사이즈별 슬라이드 변형
