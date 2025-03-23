@@ -14,7 +14,7 @@ Demo :
 
 **1. 데이터 바인딩으로 ui 동적 업데이트<br>**
 객체배열 형태로 데이터를 저장 후 활용함으로서 <br><br>
-**2. SCSS사용<br>**
+**2. SCSS 사용<br>**
 SCSS 사용으로 믹스인, 반복문 등을 통해 중복코드를 줄여 효율적으로 스타일링 가능<br><br>
 파일 구조화!!!!!!
 **3. JS 모듈화 방식<br>**
@@ -27,6 +27,33 @@ SCSS 사용으로 믹스인, 반복문 등을 통해 중복코드를 줄여 효�
 - JAVASCRIPT
 - SWIPER
 
+<br><br>
+### SCSS 로 효율적 코드 작성
+```scss
+//반응형 미디어쿼리에 적용
+$tablet: 990px;
+$tablet_s: 750px;
+$mobile: 570px;
+$mobile_s: 450px;
+
+@mixin screenWidth($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+//mixin과 조건문 혼합 사용
+@mixin searchBtn($parent, $width:3.6rem, $height: 3.6rem){
+  @if $parent == "search-form"{
+    background: $blue_00 url(../../images/icon_search.svg) no-repeat center / 1.6rem auto;
+  } @else {
+    background: url(../../images/icon_search_blk.svg) no-repeat center / 100% auto;
+  }
+  width: $width;
+  height: $height;
+  @content;
+}
+```
 <br><br>
 ### 주요 기능
 
@@ -94,7 +121,7 @@ export const RenderPickContents = (dataList = PickData) => {
 
 **- 모바일 버전에서 컨텐츠 개수 제한 및 더보기 기능**<br><br>
 <img src="https://github.com/user-attachments/assets/7632e63d-8aeb-41f0-bbd8-f1b26ca1077a" height="350" />
-<img src="https://github.com/user-attachments/assets/448821d4-2f5e-4c3c-8e36-a2e30286322f" height="400" />
+<img src="https://github.com/user-attachments/assets/448821d4-2f5e-4c3c-8e36-a2e30286322f" height="400" /><br>
 <img src="https://github.com/user-attachments/assets/56bbd6b2-06e6-49f6-853b-0b5224b32aaa" height="350" />
 <img src="https://github.com/user-attachments/assets/63912fea-6894-4433-97bb-31a12bdbfced" height="400" />
 <br><br><br>
@@ -247,4 +274,40 @@ export const VisualSlide = () => {
   );
 };
 ```
+<br><br>
+### 이슈
+**2. GNB transition효과 animation으로 처리하기**<br><br>
+ ❎ display속성은 transition속성과 함께 쓸 수 없어서 opacity와 visibility로 gnb요소를 컨트롤하니 <br> gnb의 높이 차지때문에 메인 컨텐츠들이 포커스 받지 못하는 현상<br>
+
+  **해결**<br>
+  1️⃣ gnb높이 조절로 해결하려면 시각적 효과가 다름으로 부적절<br>
+  2️⃣ display 속성을 사용하고, animation으로 transition 처리<br>
+<br>
+[관련 코드]
+```scss
+@keyframes gnbShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.gnb {
+  display: none;
+  width: 100%;
+  border-top: 0.1rem solid $gray_e5;
+  box-shadow: 0 0.5rem 1rem rgba($color: #000000, $alpha: 0.1);
+  background-color: #fff;
+  transition: 0.4s;
+  header.open & {
+    display: block;
+    animation: gnbShow 0.35s linear;
+  }
+}
+```
+
+<br><br>
+#### 작업하며 배운 점
+- 설명이 필요하지 않은 이미지일 경우더라도 이미지와 텍스트로 함께 레이아웃을 잡아야 하는 경우에는 <br>이미지의 컨테이너를 만들어서 컨테이너로 레이아웃을 잡고, 백그라운드로 이미지를 넣는것이 좋다.
 
