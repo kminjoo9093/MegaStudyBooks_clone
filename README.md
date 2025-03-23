@@ -97,8 +97,52 @@ export const RenderPickContents = (dataList = PickData) => {
 <img src="https://github.com/user-attachments/assets/448821d4-2f5e-4c3c-8e36-a2e30286322f" height="400" />
 <img src="https://github.com/user-attachments/assets/56bbd6b2-06e6-49f6-853b-0b5224b32aaa" height="350" />
 <img src="https://github.com/user-attachments/assets/63912fea-6894-4433-97bb-31a12bdbfced" height="400" />
+<br><br>
+[관련 코드]<br>
+1️⃣ 코드의 재사용을 위해 section, slide, showNum을 인수로 받는 ViewMore 함수<br>
+2️⃣ handleViewMore 함수에서 showNum 개수만큼만 보이도록 하기 위해 각 슬라이드 인덱스가 showNum - 1 인 것만 보이도록 설정<br>
+3️⃣ 더보기 버튼을 누르면 모든 슬라이드가 보이도록 하고, 더보기 버튼은 보이지 않도록 설정<br>
+```javascript
+//ViewMore.js
+export const ViewMore = (section, slide, showNum) => {
+  const sectionArea = document.querySelector(section);
+  const slideWrapper = sectionArea.querySelector(slide);
+  const slideItems = slideWrapper.querySelectorAll(".swiper-slide");
+  const viewMoreBtn = sectionArea.querySelector(".btn-more");
 
-  
+  function handleViewMore() {
+    slideItems.forEach((item, index) => {
+      if (window.innerWidth <= 750) {
+        if (index > showNum - 1) {
+          item.style.display = "none";
+        } else {
+          item.style.display = "block";
+        }
+        viewMoreBtn.style.display = "block";
+
+        viewMoreBtn.addEventListener("click", () => {
+          item.style.display = "block";
+          viewMoreBtn.style.display = "none";
+        });
+      } else {
+        viewMoreBtn.style.display = "none";
+        item.style.display = "block";
+      }
+    });
+  }
+  handleViewMore();
+  window.addEventListener("resize", handleViewMore);
+};
+
+//Slide.js youtube 섹션
+  if (window.innerWidth <= 750) changeSlideToFlex();
+
+  function changeSlideToFlex() {
+    swiper6.destroy();
+    slideWrap.classList.add("block");
+    ViewMore("#youtube", ".youtube-swiper", 2);
+  }
+```
 
 이슈
 - swiper 스크린 크기에 반응하기
