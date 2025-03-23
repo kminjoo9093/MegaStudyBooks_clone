@@ -13,7 +13,6 @@
   align-items: center;
   justify-content: center;
 }
-// layout
 
 // ====== Header ======
 @mixin myPageBtn{
@@ -34,7 +33,6 @@
   height: $height;
   @content;
 }
-// Header
 
 // ====== responsive ======
 @mixin screenWidth($width) {
@@ -42,4 +40,3 @@
     @content;
   }
 }
-// responsive

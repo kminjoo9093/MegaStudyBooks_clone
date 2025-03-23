@@ -3,9 +3,6 @@
 /* 폰트 초기화 */
 html{
   font-size: 62.5%;
-  @include screenWidth($tablet){
-    // font-size: 56.25%;
-  }
 }
 body{
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;

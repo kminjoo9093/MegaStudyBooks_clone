@@ -1,4 +1,4 @@
-export const bestData = [
+export const BestData = [
   {
     coverImage: "cover_1.jpg",
     category: "초등",

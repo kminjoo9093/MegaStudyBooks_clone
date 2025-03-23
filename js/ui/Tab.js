@@ -29,7 +29,7 @@ export const Tab = (tabWrap)=>{
   })
 }
 
-export const getClickedTab = (tabList, callback)=>{
+export const GetClickedTab = (tabList, callback)=>{
   const tabs = document.querySelectorAll(tabList);
   [...tabs].forEach((tab)=>{
     if(tab.classList.contains('active')){

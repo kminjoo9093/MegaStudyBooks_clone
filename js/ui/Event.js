@@ -1,7 +1,7 @@
 import { EventData } from "../data/eventData.js"
 import { EventSlide } from "./Slide.js";
 
-export const renderEventSlideContent = (dataList = EventData)=>{
+export const RenderEventSlideContent = (dataList = EventData)=>{
   const eventSlide = document.querySelector('.event-swiper');
   if(!eventSlide) return;
 

@@ -1,37 +1,44 @@
 import { PickData } from "../data/pickData.js";
-import { Tab, getClickedTab } from "./Tab.js";
-import {PickSlide2} from "../ui/Slide.js";
+import { Tab, GetClickedTab } from "./Tab.js";
+import { PickSlide1, PickSlide2 } from "./Slide.js";
+import { ViewMore } from "./ViewMore.js";
 
-export const RenderPickTab = (dataList = PickData)=>{
-  const tab = document.querySelector('.tab-hash');
-  if(!tab) return;
+export const RenderPickTab = (dataList = PickData) => {
+  const tab = document.querySelector(".tab-hash");
+  if (!tab) return;
 
-  const categories = dataList.map(({category})=>{
+  const categories = dataList.map(({ category }) => {
     return category;
-  })
+  });
   const newCategory = [...new Set(categories)];
 
-  const categoryContents = newCategory.map(category=>{
-    return `<li class="swiper-slide"><button class="tab-btn"># ${category}</button></li>`;
-  }).join('');
+  const categoryContents = newCategory
+    .map((category) => {
+      return `<li class="swiper-slide"><button class="tab-btn"># ${category}</button></li>`;
+    })
+    .join("");
   tab.innerHTML = categoryContents;
 
-  Tab('.tab-hash');
-}
+  Tab(".tab-hash");
+  PickSlide1();
+};
 
-export const renderPickContents = (dataList = PickData)=>{
+export const RenderPickContents = (dataList = PickData) => {
   //클릭된 탭이랑 카테고리가 일치하는 컨텐츠만 필터해서 보이도록
-  const pickContentsWrap = document.querySelector('.pick-swiper .swiper-wrapper');
-  if(!pickContentsWrap) return;
+  const pickContentsWrap = document.querySelector(
+    ".pick-swiper .swiper-wrapper"
+  );
+  if (!pickContentsWrap) return;
 
-  getClickedTab('.tab-hash .tab-btn', (clickedTabContent)=>{
-    const tabContent = clickedTabContent.replace('# ', '');
+  GetClickedTab(".tab-hash .tab-btn", (clickedTabContent) => {
+    const tabContent = clickedTabContent.replace("# ", "");
 
-    const pickList = dataList.filter(({category})=>{
+    const pickList = dataList.filter(({ category }) => {
       return tabContent === category;
-    })
-    let pickContents = pickList.map(({coverImage, description})=>{
-      return `<div class="swiper-slide">
+    });
+    let pickContents = pickList
+      .map(({ coverImage, description }) => {
+        return `<div class="swiper-slide">
                   <a href="#" class="pick-link">
                     <figure>
                       <img src="images/${coverImage}" alt="" />
@@ -40,8 +47,10 @@ export const renderPickContents = (dataList = PickData)=>{
                     <p>${description}</p>
                   </a>
                 </div>`;
-    }).join('');
+      })
+      .join("");
     pickContentsWrap.innerHTML = pickContents;
+    ViewMore("#mega-pick", ".pick-swiper", 4);
   });
   PickSlide2();
-}
+};

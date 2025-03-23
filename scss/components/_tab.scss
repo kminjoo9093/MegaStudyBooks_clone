@@ -17,7 +17,6 @@
       border-color: $gray_11;
     }
 
-    // responsive
     @include screenWidth($tablet){
       font-size: 1.6rem;
       line-height: 3rem;

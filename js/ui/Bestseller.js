@@ -1,6 +1,6 @@
-import { bestData } from "../data/bestData.js";
+import { BestData } from "../data/bestData.js";
 import { BestSellerSlide } from "./Slide.js";
-import { getClickedTab } from "./Tab.js";
+import { GetClickedTab } from "./Tab.js";
 
 export const BestsellerBtn = () => {
   const slideBtnPosition = () => {
@@ -19,11 +19,11 @@ export const BestsellerBtn = () => {
   window.addEventListener("resize", slideBtnPosition);
 };
 
-export const renderBestSlideContent = (dataList = bestData) => {
+export const RenderBestSlideContent = (dataList = BestData) => {
   const bestSlide = document.querySelector(".bestseller-swiper");
   if (!bestSlide) return;
 
-  getClickedTab(".bestseller-tab  .tab-btn", (clickedTabContent) => {
+  GetClickedTab(".bestseller-tab  .tab-btn", (clickedTabContent) => {
     const filteredList = dataList.filter(({ category }) => {
       return category === clickedTabContent;
     });

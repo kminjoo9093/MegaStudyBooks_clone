@@ -6,13 +6,3 @@ export const HandleMenuBtn = ()=>{
     header.classList.toggle('open');
   })
 }
-
-// export const handleGnbColHeight = ()=>{
-//   const gnbCols = document.querySelectorAll('.gnb-col');
-//   const gnbColsHeights = [...gnbCols].map(col=>{
-//     return col.offsetHeight;
-//   })
-//   gnbCols.forEach(col=>{
-//     col.style.height = `Math.max(${gnbColsHeights})px`;
-//   })
-// }
