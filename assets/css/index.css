@@ -1571,7 +1571,7 @@ header.open .nav-icons .btn-menu span:last-child {
   display: block;
   width: 3.2rem;
   aspect-ratio: 1;
-  background: url("../../assets/images/icon-quickSearch.svg") no-repeat center/100% auto;
+  background: url("../../images/icon-quickSearch.svg") no-repeat center/100% auto;
 }
 @media (max-width: 990px) {
   .btn-quickSearch i {
