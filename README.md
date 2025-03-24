@@ -2,7 +2,7 @@
 
 메인페이지와 로그인 페이지 반응형 제작
 <br><br>
-Demo : 
+Demo : https://kminjoo9093.github.io/MegaStudyBooks_clone/
 <br><br>
 
 <img src="https://github.com/user-attachments/assets/ec93918f-cab5-4fa9-88cc-d0fa95354be0" height="250px" />
