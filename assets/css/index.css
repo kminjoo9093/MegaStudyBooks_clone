@@ -360,7 +360,7 @@ header.open .gnb {
   line-height: 1.5em;
   display: inline-block;
   padding-right: 2rem;
-  background: url("../../images/icon_chevron_R.svg") no-repeat center right/1.6rem auto;
+  background: url("../../assets/images/icon_chevron_R.svg") no-repeat center right/1.6rem auto;
 }
 .gnb-col ul {
   display: grid;
@@ -412,25 +412,25 @@ header.open .gnb {
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);
 }
 #quick ul li:nth-child(1) .quick-icon {
-  background-image: url("../../images/icon-quick1.svg");
+  background-image: url("../../assets/images/icon-quick1.svg");
 }
 #quick ul li:nth-child(2) .quick-icon {
-  background-image: url("../../images/icon-quick2.svg");
+  background-image: url("../../assets/images/icon-quick2.svg");
 }
 #quick ul li:nth-child(3) .quick-icon {
-  background-image: url("../../images/icon-quick3.svg");
+  background-image: url("../../assets/images/icon-quick3.svg");
 }
 #quick ul li:nth-child(4) .quick-icon {
-  background-image: url("../../images/icon-quick4.svg");
+  background-image: url("../../assets/images/icon-quick4.svg");
 }
 #quick ul li:nth-child(5) .quick-icon {
-  background-image: url("../../images/icon-quick5.svg");
+  background-image: url("../../assets/images/icon-quick5.svg");
 }
 #quick ul li:nth-child(6) .quick-icon {
-  background-image: url("../../images/icon-quick6.svg");
+  background-image: url("../../assets/images/icon-quick6.svg");
 }
 #quick ul li:nth-child(7) .quick-icon {
-  background-image: url("../../images/icon-quick7.svg");
+  background-image: url("../../assets/images/icon-quick7.svg");
 }
 #quick ul a {
   font-size: 1.8rem;
@@ -706,7 +706,7 @@ header.open .gnb {
   display: inline-block;
   width: 2rem;
   aspect-ratio: 1;
-  background: #0082FF url("../../images/icon_chevron_W.svg") center/1.5rem auto;
+  background: #0082FF url("../../assets/images/icon_chevron_W.svg") center/1.5rem auto;
   border-radius: 50%;
   vertical-align: middle;
   margin-left: 0.5rem;
@@ -871,7 +871,7 @@ header.open .gnb {
   padding-right: 2rem;
   flex: 1;
   text-align: left;
-  background: url("../../images/icon_chevron_R.svg") no-repeat right center/1.8rem auto;
+  background: url("../../assets/images/icon_chevron_R.svg") no-repeat right center/1.8rem auto;
 }
 @media (max-width: 990px) {
   #community .board li a h3 {
@@ -974,13 +974,13 @@ footer .footer-top .link-wrap .sns a {
   aspect-ratio: 1;
 }
 footer .footer-top .link-wrap .sns a.icon-insta {
-  background: url("../../images/icon_insta_w.svg") no-repeat center/100% auto;
+  background: url("../../assets/images/icon_insta_w.svg") no-repeat center/100% auto;
 }
 footer .footer-top .link-wrap .sns a.icon-youtube {
-  background: url("../../images/icon_youtube_w.svg") no-repeat center/100% auto;
+  background: url("../../assets/images/icon_youtube_w.svg") no-repeat center/100% auto;
 }
 footer .footer-top .link-wrap .sns a.icon-ncafe {
-  background: url("../../images/icon_ncafe_w.svg") no-repeat center/100% auto;
+  background: url("../../assets/images/icon_ncafe_w.svg") no-repeat center/100% auto;
 }
 @media (max-width: 990px) {
   footer .footer-top .link-wrap .sns a {
@@ -1356,13 +1356,13 @@ footer .copyright {
   aspect-ratio: 1;
 }
 #signin .easy-box .easy-btns i.easy-icon-kakao {
-  background: url("../../images/icon-kakao.svg") no-repeat center/100% auto;
+  background: url("../../assets/images/icon-kakao.svg") no-repeat center/100% auto;
 }
 #signin .easy-box .easy-btns i.easy-icon-naver {
-  background: url("../../images/icon-naver.svg") no-repeat center/100% auto;
+  background: url("../../assets/images/icon-naver.svg") no-repeat center/100% auto;
 }
 #signin .easy-box .easy-btns i.easy-icon-google {
-  background: url("../../images/icon-google.svg") no-repeat center/100% auto;
+  background: url("../../assets/images/icon-google.svg") no-repeat center/100% auto;
 }
 @media (max-width: 990px) {
   #signin .easy-box .easy-btns i {
@@ -1371,7 +1371,7 @@ footer .copyright {
 }
 
 .utility .search-form button {
-  background: #0082FF url("../../images/icon_search.svg") no-repeat center/1.6rem auto;
+  background: #0082FF url("../../assets/images/icon_search.svg") no-repeat center/1.6rem auto;
   width: 3.6rem;
   height: 3.6rem;
   border-radius: 50%;
@@ -1380,7 +1380,7 @@ footer .copyright {
   display: inline-block;
   width: 2.4rem;
   height: 2.4rem;
-  background: url("../../images/icon_my.svg") no-repeat center/2.4rem auto;
+  background: url("../../assets/images/icon_my.svg") no-repeat center/2.4rem auto;
   margin-left: 2rem;
 }
 @media (max-width: 990px) {
@@ -1432,7 +1432,7 @@ header.open .nav-icons .btn-menu span:last-child {
 }
 @media (max-width: 990px) {
   .nav-icons .btn-search {
-    background: url("../../images/icon_search_blk.svg") no-repeat center/100% auto;
+    background: url("../../assets/images/icon_search_blk.svg") no-repeat center/100% auto;
     width: 2.2rem;
     height: 2.2rem;
     display: block;
@@ -1446,7 +1446,7 @@ header.open .nav-icons .btn-menu span:last-child {
     display: inline-block;
     width: 2.4rem;
     height: 2.4rem;
-    background: url("../../images/icon_my.svg") no-repeat center/2.4rem auto;
+    background: url("../../assets/images/icon_my.svg") no-repeat center/2.4rem auto;
     margin-left: 2rem;
   }
 }
@@ -1464,7 +1464,7 @@ header.open .nav-icons .btn-menu span:last-child {
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
   position: absolute;
   top: 50%;
-  background: #fff url("../../images/icon_chevron_R.svg") no-repeat center/1.6rem auto;
+  background: #fff url("../../assets/images/icon_chevron_R.svg") no-repeat center/1.6rem auto;
 }
 
 .swiper-button-prev.type2,
@@ -1472,7 +1472,7 @@ header.open .nav-icons .btn-menu span:last-child {
   margin-top: 0;
   position: static;
   width: 4rem;
-  background: #fff url("../../images/icon_chevron_R2.svg") no-repeat center/2.4rem auto;
+  background: #fff url("../../assets/images/icon_chevron_R2.svg") no-repeat center/2.4rem auto;
 }
 @media (max-width: 990px) {
   .swiper-button-prev.type2,
@@ -1571,7 +1571,7 @@ header.open .nav-icons .btn-menu span:last-child {
   display: block;
   width: 3.2rem;
   aspect-ratio: 1;
-  background: url("../../images/icon-quickSearch.svg") no-repeat center/100% auto;
+  background: url("../../assets/images/icon-quickSearch.svg") no-repeat center/100% auto;
 }
 @media (max-width: 990px) {
   .btn-quickSearch i {
@@ -2128,7 +2128,7 @@ header.open .nav-icons .btn-menu span:last-child {
   border: 0.1rem solid #0082FF;
 }
 .popup a span input[type=checkbox]:checked {
-  background: #0082FF url("../../images/icon_check_w.svg") no-repeat center/cover;
+  background: #0082FF url("../../assets/images/icon_check_w.svg") no-repeat center/cover;
   border: 0.1rem solid #fff;
 }
 .popup a span label {
