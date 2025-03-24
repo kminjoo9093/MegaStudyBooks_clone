@@ -102,7 +102,7 @@
   box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.1);
   position: absolute;
   top: 50%;
-  background: #fff url("/assets/images/icon_chevron_R.svg") no-repeat center /
+  background: #fff url("../../images/icon_chevron_R.svg") no-repeat center /
     1.6rem auto;
 }
 .swiper-button-prev.type2,
@@ -110,7 +110,7 @@
   margin-top: 0;
   position: static;
   width: 4rem;
-  background: #fff url("/assets/images/icon_chevron_R2.svg") no-repeat center /
+  background: #fff url("../../images/icon_chevron_R2.svg") no-repeat center /
     2.4rem auto;
   @include screenWidth($tablet) {
     display: none;
@@ -192,8 +192,8 @@
     display: block;
     width: 3.2rem;
     aspect-ratio: 1;
-    background: url("/assets/images/icon-quickSearch.svg") no-repeat center /
-      100% auto;
+    background: url("../../images/icon-quickSearch.svg") no-repeat center / 100%
+      auto;
     @include screenWidth($tablet) {
       width: 2.4rem;
     }
