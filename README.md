@@ -56,7 +56,7 @@ $mobile_s: 450px;
 <br><br>
 ### 주요 기능
 
-**- 탭메뉴 선택에 따른 컨텐츠 업데이트**<br><br>
+**1. 탭메뉴 선택에 따른 컨텐츠 업데이트**<br><br>
   <img src="https://github.com/user-attachments/assets/28c799a1-feef-4f31-8358-177850a7522f" width="430" />
   <img src="https://github.com/user-attachments/assets/d8e40913-e978-44e9-925c-8de43a86b100" width="430" />
 
@@ -118,7 +118,7 @@ export const RenderPickContents = (dataList = PickData) => {
 ```
 <br><br>
 
-**- 모바일 버전에서 컨텐츠 개수 제한 및 더보기 기능**<br><br>
+**2. 모바일 버전에서 컨텐츠 개수 제한 및 더보기 기능**<br><br>
 <img src="https://github.com/user-attachments/assets/7632e63d-8aeb-41f0-bbd8-f1b26ca1077a" height="350" />
 <img src="https://github.com/user-attachments/assets/448821d4-2f5e-4c3c-8e36-a2e30286322f" height="400" /><br>
 <img src="https://github.com/user-attachments/assets/56bbd6b2-06e6-49f6-853b-0b5224b32aaa" height="350" />
@@ -274,7 +274,7 @@ export const VisualSlide = () => {
 };
 ```
 <br><br>
-### 이슈
+
 **2. GNB transition효과 animation으로 처리하기**<br><br>
  ❎ display속성은 transition속성과 함께 쓸 수 없어서 opacity와 visibility로 gnb요소를 컨트롤하니 <br> gnb의 높이 차지때문에 메인 컨텐츠들이 포커스 받지 못하는 현상<br>
 
