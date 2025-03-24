@@ -194,7 +194,7 @@
         $easy-icon: (kakao, naver, google);
         @each $icon in $easy-icon {
           &.easy-icon-#{$icon} {
-            background: url('/assets/images/icon-#{$icon}.svg')
+            background: url('../../images/icon-#{$icon}.svg')
               no-repeat
               center /
               100%
