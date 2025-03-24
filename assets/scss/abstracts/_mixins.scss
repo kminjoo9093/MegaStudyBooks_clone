@@ -19,7 +19,7 @@
   display: inline-block;
   width: 2.4rem;
   height: 2.4rem;
-  background: url("../../assets/images/icon_my.svg") no-repeat center / 2.4rem
+  background: url("../../images/icon_my.svg") no-repeat center / 2.4rem
     auto;
   margin-left: 2rem;
 }
@@ -27,13 +27,13 @@
 @mixin searchBtn($parent, $width: 3.6rem, $height: 3.6rem) {
   @if $parent == "search-form" {
     background: $blue_00
-      url("../../assets/images/icon_search.svg")
+      url("../../images/icon_search.svg")
       no-repeat
       center /
       1.6rem
       auto;
   } @else {
-    background: url("../../assets/images/icon_search_blk.svg")
+    background: url("../../images/icon_search_blk.svg")
       no-repeat
       center /
       100%
