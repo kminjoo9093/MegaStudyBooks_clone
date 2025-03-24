@@ -14,16 +14,17 @@ function handelSwiperResizeEvents(
   callback3 = null
 ) {
   window.addEventListener("resize", () => {
-    if (!callback1) {
-      if (window.innerWidth <= 750) {
-        if (callback2) callback2();
-      } else {
-        swiper.destroy();
-        swiper = initializeSwiperInstance(selector, config);
-        if (callback3) callback3();
-      }
-    } else {
+    if (callback1) {
       callback1(selector, config);
+      return;
+    }
+
+    if (window.innerWidth <= 750) {
+      if (callback2) callback2();
+    } else {
+      swiper.destroy();
+      swiper = initializeSwiperInstance(selector, config);
+      if (callback3) callback3();
     }
   });
 }
