@@ -8,11 +8,11 @@ export const RenderVisualSlide = (dataList = VisualData) => {
       .map(({ pcImage, moImage, description }) => {
         if (window.innerWidth > 990) {
           return `<div class="swiper-slide">
-                    <img src="./images/${pcImage}" alt="${description}">
+                    <img src="./assets/images/${pcImage}" alt="${description}">
                 </div>`;
         } else {
           return `<div class="swiper-slide">
-                    <img src="./images/${moImage}" alt="${description}">
+                    <img src="./assets/images/${moImage}" alt="${description}">
                 </div>`;
         }
       })

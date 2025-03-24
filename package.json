@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "watch": "sass scss:css --watch",
-    "build": "sass scss:build --style=compressed",
+    "watch": "sass assets/scss:assets/css --watch",
+    "build": "sass assets/scss:assets/css --style=compressed",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

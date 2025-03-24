@@ -32,7 +32,7 @@ export const RenderBestSlideContent = (dataList = BestData) => {
         return `<div class="swiper-slide">
                   <a href="#">
                     <div class="best-img">
-                      <img src="./images/${coverImage}" alt="">
+                      <img src="./assets/images/${coverImage}" alt="">
                     </div >
                     <p>${title}</p>
                   </a>

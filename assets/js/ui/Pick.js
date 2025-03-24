@@ -41,7 +41,7 @@ export const RenderPickContents = (dataList = PickData) => {
         return `<div class="swiper-slide">
                   <a href="#" class="pick-link">
                     <figure>
-                      <img src="images/${coverImage}" alt="" />
+                      <img src="./assets/images/${coverImage}" alt="" />
                       <figcaption>${description}</figcaption>
                     </figure>
                     <p>${description}</p>

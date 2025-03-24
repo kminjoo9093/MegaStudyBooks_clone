@@ -72,59 +72,59 @@
 }
 
 // swiper prev/next button
-  @mixin swiperArrowBtn($direction) {
-    .swiper-button-#{$direction} {
-      @if $direction == "prev" {
-        left: 0;
-        transform: rotate(180deg);
-      } @else {
-        right: 0;
-        transform: rotate(0);
-      }
+@mixin swiperArrowBtn($direction) {
+  .swiper-button-#{$direction} {
+    @if $direction == "prev" {
+      left: 0;
+      transform: rotate(180deg);
+    } @else {
+      right: 0;
+      transform: rotate(0);
     }
   }
-  @mixin controlsAlign {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    @content;
+}
+@mixin controlsAlign {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  @content;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  margin-top: 0;
+}
+.swiper-button-prev.type1,
+.swiper-button-next.type1 {
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.1);
+  position: absolute;
+  top: 50%;
+  background: #fff url("/assets/images/icon_chevron_R.svg") no-repeat
+    center / 1.6rem auto;
+}
+.swiper-button-prev.type2,
+.swiper-button-next.type2 {
+  margin-top: 0;
+  position: static;
+  width: 4rem;
+  background: #fff url("/assets/images/icon_chevron_R2.svg") no-repeat
+    center / 2.4rem auto;
+  @include screenWidth($tablet) {
+    display: none;
   }
-  .swiper-button-prev,
-  .swiper-button-next {
-    margin-top: 0;
-  }
-  .swiper-button-prev.type1,
-  .swiper-button-next.type1 {
-    width: 4.4rem;
-    height: 4.4rem;
-    border-radius: 50%;
-    box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.1);
-    position: absolute;
-    top: 50%;
-    background: #fff url(../../images/icon_chevron_R.svg) no-repeat center /
-      1.6rem auto;
-  }
-  .swiper-button-prev.type2,
-  .swiper-button-next.type2 {
-    margin-top: 0;
-    position: static;
-    width: 4rem;
-    background: #fff url(../../images/icon_chevron_R2.svg) no-repeat center /
-      2.4rem auto;
-    @include screenWidth($tablet) {
-      display: none;
-    }
-  }
-  .swiper-button-prev:after,
-  .swiper-button-next:after {
-    content: "";
-  }
-  @include swiperArrowBtn("prev");
-  @include swiperArrowBtn("next");
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+}
+@include swiperArrowBtn("prev");
+@include swiperArrowBtn("next");
 
 // 더보기 버튼
-.btn-more{
+.btn-more {
   font-size: 1.4rem;
   line-height: 2.4em;
   display: block;
@@ -135,7 +135,7 @@
 }
 
 // 패밀리사이트 버튼
-.btn-family{
+.btn-family {
   font-size: 1.4rem;
   text-align: left;
   line-height: 3em;
@@ -145,8 +145,8 @@
   border-radius: 3rem;
   display: flex;
   justify-content: space-between;
-  &:after{
-    content: '▾';
+  &:after {
+    content: "▾";
     color: #fff;
   }
   @include screenWidth($tablet) {
@@ -162,7 +162,7 @@
 }
 
 //맞춤도서 버튼
-.btn-quickSearch{
+.btn-quickSearch {
   width: 10rem;
   aspect-ratio: 1;
   position: fixed;
@@ -188,16 +188,17 @@
   @include screenWidth($tablet_s) {
     scale: 0.85;
   }
-  i{
+  i {
     display: block;
     width: 3.2rem;
     aspect-ratio: 1;
-    background: url(../../images/icon-quickSearch.svg) no-repeat center / 100% auto;
+    background: url("/assets/images/icon-quickSearch.svg") no-repeat
+      center / 100% auto;
     @include screenWidth($tablet) {
       width: 2.4rem;
     }
   }
-  span{
+  span {
     font-size: 1.6rem;
     font-weight: 700;
     color: $blue_00;
@@ -208,16 +209,16 @@
 }
 
 // login 버튼
-#signin{
-  .btn-area{
+#signin {
+  .btn-area {
     text-align: right;
-    button{
+    button {
       width: 9rem;
       height: 9rem;
       border-radius: 50%;
       font-size: 1.8rem;
       transition: 0.35s;
-      @include screenWidth(1024px){
+      @include screenWidth(1024px) {
         width: 100%;
         height: auto;
         line-height: 2.5em;
@@ -225,37 +226,37 @@
         margin-top: 3.2rem;
         font-size: 1.6rem;
       }
-      @include screenWidth($mobile_s){
+      @include screenWidth($mobile_s) {
         margin-top: 2.5rem;
       }
     }
-    .btn-login{
+    .btn-login {
       background-color: $blue_00;
       color: #fff;
       margin-right: auto;
-      &:hover{
+      &:hover {
         filter: brightness(0.9);
       }
     }
-    .btn-signup{
+    .btn-signup {
       border: 0.1rem solid $blue_00;
       color: $blue_00;
-      &:hover{
+      &:hover {
         color: #fff;
         background-color: $blue_00;
       }
     }
-  } 
+  }
 }
 
 //간편로그인 버튼
-.easy-btns{
+.easy-btns {
   display: flex;
   gap: 1rem;
-  @include screenWidth($tablet){
+  @include screenWidth($tablet) {
     flex-direction: column;
   }
-  button{
+  button {
     display: inline-flex;
     align-items: center;
     font-size: 1.8rem;
@@ -264,14 +265,14 @@
     border-radius: 2.5rem;
     border: 0.1rem solid $gray_cf;
     padding-inline: 4rem;
-    @include screenWidth($tablet){
+    @include screenWidth($tablet) {
       font-size: 1.6rem;
       font-weight: 600;
     }
-    @include screenWidth($tablet_s){
+    @include screenWidth($tablet_s) {
       font-size: 1.4rem;
     }
-    @include screenWidth($mobile_s){
+    @include screenWidth($mobile_s) {
       font-size: 1.2rem;
       padding-inline: 3rem;
     }
