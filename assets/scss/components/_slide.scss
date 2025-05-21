@@ -2,8 +2,6 @@
 @use "../abstracts/" as *;
 @use "./button" as *;
 
-@import url("https://cdn.jsdelivr.net/npm/swiper@11.2.6/swiper-bundle.min.css");
-
 /************** SWIPER COMMON STYLE *************/
 .swiper {
   .swiper-pagination {

@@ -1,4 +1,3 @@
-import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
 import { ViewMore } from "./ViewMore.js";
 
 function initializeSwiperInstance(selector, config) {
