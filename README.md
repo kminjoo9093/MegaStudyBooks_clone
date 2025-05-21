@@ -1,8 +1,8 @@
 # **메가스터디북스 클론코딩**
 
-메인페이지와 로그인 페이지 반응형 제작
+메인페이지와 로그인 페이지 반응형 웹사이트
 <br><br>
-Demo : 
+Demo : https://kminjoo9093.github.io/MegaStudyBooks_clone/
 <br><br>
 
 <img src="https://github.com/user-attachments/assets/ec93918f-cab5-4fa9-88cc-d0fa95354be0" height="250px" />
@@ -13,7 +13,7 @@ Demo :
 ### 목표
 
 **1. 데이터 바인딩으로 ui 동적 업데이트<br>**
-객체배열 형태로 데이터를 저장 후 활용함으로서 <br><br>
+객체배열 형태로 데이터를 저장 후 활용 <br><br>
 **2. SCSS 사용<br>**
 SCSS 사용으로 믹스인, 반복문 등을 통해 중복코드를 줄여 효율적으로 스타일링 가능<br><br>
 **3. JS 모듈화 방식<br>**
