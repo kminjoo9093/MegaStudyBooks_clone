@@ -2,15 +2,16 @@
 
 메인페이지와 로그인 페이지 반응형 웹사이트
 <br><br>
-Demo : https://kminjoo9093.github.io/MegaStudyBooks_clone/
+link : https://kminjoo9093.github.io/MegaStudyBooks_clone/
 <br><br>
 
 <img src="https://github.com/user-attachments/assets/ec93918f-cab5-4fa9-88cc-d0fa95354be0" height="250px" />
 <img src="https://github.com/user-attachments/assets/259e4924-ba71-4476-9853-257210dd5ec5" height="250px" />
 <img src="https://github.com/user-attachments/assets/6812cb2b-c74c-4cc8-95e0-47cb3f8a24e3" height="200px" />
 
-<br><br>
-### 목표
+<br><br><br>
+
+### ☝️ &nbsp; 목표
 
 **1. 데이터 바인딩으로 ui 동적 업데이트<br>**
 객체배열 형태로 데이터를 저장 후 활용 <br><br>
@@ -19,14 +20,16 @@ SCSS 사용으로 믹스인, 반복문 등을 통해 중복코드를 줄여 효�
 **3. JS 모듈화 방식<br>**
 스크립트는 모듈화 방식을 사용하여 코드의 재사용성을 증가 및 의존성 관리
 
-<br><br>
-### 사용 스킬
+<br><br><br>
+
+### 🛠 &nbsp; 사용 스킬
 - HTML
 - SCSS
 - JAVASCRIPT
 - SWIPER
 
-<br><br>
+<br><br><br>
+
 ### SCSS 로 효율적 코드 작성
 ```scss
 //반응형 미디어쿼리에 적용
@@ -53,8 +56,8 @@ $mobile_s: 450px;
   @content;
 }
 ```
-<br><br>
-### 주요 기능
+<br><br><br>
+### 💻 &nbsp; 주요 기능
 
 **1. 탭메뉴 선택에 따른 컨텐츠 업데이트**<br><br>
   <img src="https://github.com/user-attachments/assets/28c799a1-feef-4f31-8358-177850a7522f" width="430" />
@@ -65,9 +68,11 @@ $mobile_s: 450px;
   <img src="https://github.com/user-attachments/assets/32fb267e-df7c-463d-8221-67105eae0ae9" width="430" />
   <img src="https://github.com/user-attachments/assets/0da6cd37-fddb-41b7-a13a-b56ed313dbba" width="430" />
 <br><br><br>
-[관련 코드]<br>
-1️⃣ GetClickedTab 함수에서 클릭되거나 active클래스를 가진 탭의 textContent를 콜백함수의 인자로 넣어주도록 한다.<br>
-2️⃣ 탭 컨텐츠를 렌더링하는 함수 내에서 GetClickedTab 함수를 호출하여 데이터리스트 중 인자로 받은 탭메뉴 텍스트와 카테고리가 일치하는 데이터만 선별한다.(filter메서드 활용)
+
+1️⃣ GetClickedTab 함수에서 클릭되거나 active클래스를 가진 탭의 textContent를 콜백함수의 인자로 넣어주도록 한다.<br><br>
+2️⃣ 탭 컨텐츠를 렌더링하는 함수 내에서 GetClickedTab 함수를 호출하여 데이터리스트 중 인자로 받은 탭메뉴 텍스트와 카테고리가 일치하는 데이터만 선별한다.(filter메서드 활용)<br><br>
+
+**[관련 코드]**
 
 ```Javascript
 //Tab.js
@@ -116,7 +121,9 @@ export const RenderPickContents = (dataList = PickData) => {
   PickSlide2();
 };
 ```
-<br><br>
+<br><br><br>
+<hr>
+
 
 **2. 모바일 버전에서 컨텐츠 개수 제한 및 더보기 기능**<br><br>
 <img src="https://github.com/user-attachments/assets/7632e63d-8aeb-41f0-bbd8-f1b26ca1077a" height="350" />
@@ -124,10 +131,13 @@ export const RenderPickContents = (dataList = PickData) => {
 <img src="https://github.com/user-attachments/assets/56bbd6b2-06e6-49f6-853b-0b5224b32aaa" height="350" />
 <img src="https://github.com/user-attachments/assets/63912fea-6894-4433-97bb-31a12bdbfced" height="400" />
 <br><br><br>
-[관련 코드]<br>
-1️⃣ 코드의 재사용을 위해 section, slide, showNum을 인수로 받는 ViewMore 함수<br>
-2️⃣ handleViewMore 함수에서 showNum 개수만큼만 보이도록 하기 위해 각 슬라이드 인덱스가 showNum - 1 인 것만 보이도록 설정<br>
-3️⃣ 더보기 버튼을 누르면 모든 슬라이드가 보이도록 하고, 더보기 버튼은 보이지 않도록 설정<br>
+
+1️⃣ 코드의 재사용을 위해 section, slide, showNum을 인수로 받는 ViewMore 함수<br><br>
+2️⃣ handleViewMore 함수에서 showNum 개수만큼만 보이도록 하기 위해 각 슬라이드 인덱스가 showNum - 1 인 것만 보이도록 설정<br><br>
+3️⃣ 더보기 버튼을 누르면 모든 슬라이드가 보이도록 하고, 더보기 버튼은 보이지 않도록 설정<br><br>
+
+**[관련 코드]**
+
 ```javascript
 //ViewMore.js
 export const ViewMore = (section, slide, showNum) => {
@@ -170,18 +180,23 @@ export const ViewMore = (section, slide, showNum) => {
   }
 ```
 
-<br><br>
-### 이슈
+<br><br><br>
+
+
+## 🚨 &nbsp; 이슈
 **1. resize 이벤트 발생 시 swiper 오류 해결**<br>
 
-   ❎ 리사이즈 이벤트가 발생할 때 슬라이드가 고정되지 않고 넘어가듯이 보이는 현상<br>
-   ❎ 뷰포트 크기에 따른 적절한 이미지 변경이 안되는 현상<br>
+❌ &nbsp; 리사이즈 이벤트가 발생할 때 슬라이드가 고정되지 않고 넘어가듯이 보이는 현상<br>
+❌ &nbsp; 뷰포트 크기에 따른 적절한 이미지 변경이 안되는 현상<br>
 
-  **해결**<br>
-  1️⃣ swiper 인스턴스를 전역으로 선언<br>
-  2️⃣ swiper를 초기화 시키는 함수 만들어 호출<br>
-  3️⃣ resize 이벤트 발생 시 destroy()로 swiper를 삭제하고, 다시 초기화 함수 호출<br>
-  ❗️ 순서 중요 : 스와이퍼 삭제 -> 슬라이드 컨텐츠 불러오는 렌더링 함수 실행 -> 스와이퍼 재초기화<br>
+<br>
+
+### 🔍 &nbsp; 해결
+
+  1️⃣ &nbsp; swiper 인스턴스를 전역으로 선언<br><br>
+  2️⃣ &nbsp; swiper를 초기화 시키는 함수 만들어 호출<br><br>
+  3️⃣ &nbsp; resize 이벤트 발생 시 destroy()로 swiper를 삭제하고, 다시 초기화 함수 호출<br>
+  ❗️ &nbsp; 순서 중요 : 스와이퍼 삭제 -> 슬라이드 컨텐츠 불러오는 렌더링 함수 실행 -> 스와이퍼 재초기화<br><br>
   
 ```javascript
 //swiper instance 선언 함수
@@ -273,16 +288,17 @@ export const VisualSlide = () => {
   );
 };
 ```
-<br><br>
+<br><br><br>
+<hr>
 
 **2. GNB transition효과 animation으로 처리하기**<br><br>
- ❎ display속성은 transition속성과 함께 쓸 수 없어서 opacity와 visibility로 gnb요소를 컨트롤하니 <br> gnb의 높이 차지때문에 메인 컨텐츠들이 포커스 받지 못하는 현상<br>
+ ❌ &nbsp; display속성은 transition속성과 함께 쓸 수 없어서 opacity와 visibility로 gnb요소를 컨트롤하니 <br> gnb의 높이 차지때문에 메인 컨텐츠들이 포커스 받지 못하는 현상<br>
 
-  **해결**<br>
-  1️⃣ gnb높이 조절로 해결하려면 시각적 효과가 다름으로 부적절<br>
-  2️⃣ display 속성을 사용하고, animation으로 transition 처리<br>
-<br>
-[관련 코드]
+### 🔍 &nbsp; 해결
+
+  1️⃣ &nbsp; gnb높이 조절로 해결하려면 시각적 효과가 다름으로 부적절<br><br>
+  2️⃣ &nbsp; display 속성을 사용하고, animation으로 transition 처리<br><br>
+
 ```scss
 @keyframes gnbShow {
   0% {
@@ -307,8 +323,9 @@ export const VisualSlide = () => {
 ```
 
 <br><br>
-#### 작업하며 배운 점
-- 설명이 필요하지 않은 이미지일 경우더라도 이미지와 텍스트로 함께 레이아웃을 잡아야 하는 경우에는 <br>이미지의 컨테이너를 만들어서 컨테이너로 레이아웃을 잡고, 백그라운드로 이미지를 넣는것이 좋다.
-- DOMContentLoaded 와 load 이벤트의 차이<br>
-  DOMContentLoaded : 이미지, 스타일시트 등 외부 리소스가 로드되지 않아도 DOM이 준비되면 실행 -> DOM 구조 준비 후 빠르게 접근해야 할 경우 적합
-  load : 페이지의 모든 리소스(HTML, CSS, 이미지, 스크립트, 비디오 등)가 완전히 로드되었을 때 실행 -> 이미지 조작, 크기 변경 시 적합
+## 📌 &nbsp; 기술적 회고 및 배운 점 정리
+
+1️⃣ &nbsp; 설명이 필요하지 않은 이미지일 경우더라도 이미지와 텍스트로 함께 레이아웃을 잡아야 하는 경우에는 <br>이미지의 컨테이너를 만들어서 컨테이너로 레이아웃을 잡고, 백그라운드로 이미지를 넣는것이 좋다.
+2️⃣ &nbsp; DOMContentLoaded 와 load 이벤트의 차이<br>
+  &nbsp; DOMContentLoaded : 이미지, 스타일시트 등 외부 리소스가 로드되지 않아도 DOM이 준비되면 실행 -> DOM 구조 준비 후 빠르게 접근해야 할 경우 적합
+  &nbsp; load : 페이지의 모든 리소스(HTML, CSS, 이미지, 스크립트, 비디오 등)가 완전히 로드되었을 때 실행 -> 이미지 조작, 크기 변경 시 적합
