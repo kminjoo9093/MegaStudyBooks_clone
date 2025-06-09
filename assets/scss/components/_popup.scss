@@ -4,19 +4,20 @@
 .popup {
   width: 100%;
   position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: -30rem;
   z-index: 999;
+  @extend .padInline;
+  @include screenWidth($tablet) {
+    padding: 0;
+    max-width: 50rem;
+  }
   &.show {
     animation: popupShow 1.5s linear forwards;
   }
   a {
-    @extend .padInline;
     display: block;
-    position: relative;
-    @include screenWidth($tablet) {
-      padding: 0;
-      max-width: 50rem;
-    }
     img {
       width: 100%;
       display: none;
@@ -24,56 +25,55 @@
         display: block;
       }
     }
-    span {
-      position: absolute;
-      bottom: 1rem;
-      left: 4rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      z-index: 10;
-      @include screenWidth($tablet) {
-        left: 1rem;
+  }
+  span {
+    position: absolute;
+    bottom: 1rem;
+    left: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 10;
+    @include screenWidth($tablet) {
+      left: 1rem;
+    }
+    input[type="checkbox"] {
+      appearance: none;
+      width: 1.7rem;
+      aspect-ratio: 1;
+      border: 0.1rem solid $gray_cf;
+      border-radius: 0.2rem;
+      background-color: #fff;
+      cursor: pointer;
+      &:focus {
+        border: 0.1rem solid $blue_00;
       }
-      input[type="checkbox"] {
-        appearance: none;
-        width: 1.7rem;
-        aspect-ratio: 1;
-        border: 0.1rem solid $gray_cf;
-        border-radius: 0.2rem;
-        background-color: #fff;
-        cursor: pointer;
-        &:focus {
-          border: 0.1rem solid $blue_00;
-        }
-        &:checked {
-          background: $blue_00 url("../../assets/images/icon_check_w.svg") no-repeat
-            center / cover;
-          border: 0.1rem solid #fff;
-        }
-      }
-      label {
-        font-size: 1.3rem;
-        cursor: pointer;
+      &:checked {
+        background: $blue_00 url("../../assets/images/icon_check_w.svg")
+          no-repeat center / cover;
+        border: 0.1rem solid #fff;
       }
     }
-
-    .popup-close {
-      position: absolute;
-      top: 5rem;
-      right: 4.5rem;
-      width: 2.5rem;
-      aspect-ratio: 1;
-      margin: 1rem;
-      @include screenWidth($tablet) {
-        top: 1rem;
-        right: 1rem;
-      }
-      img {
-        width: 100%;
-        display: block;
-        opacity: 0.7;
-      }
+    label {
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+  }
+  .popup-close {
+    position: absolute;
+    top: 5rem;
+    right: 4.5rem;
+    width: 2.5rem;
+    aspect-ratio: 1;
+    margin: 1rem;
+    @include screenWidth($tablet) {
+      top: 1rem;
+      right: 1rem;
+    }
+    img {
+      width: 100%;
+      display: block;
+      opacity: 0.7;
     }
   }
 }

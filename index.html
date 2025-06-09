@@ -6,12 +6,12 @@
     <title>메가스터디북스</title>
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
     <!-- fonts -->
-    <link
+    <!-- <link
       rel="stylesheet"
       as="style"
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
-    />
+    /> -->
     <!-- swiper css cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- custom css -->
@@ -52,7 +52,7 @@
             <div class="utility-inner web-center">
               <form class="search-form">
                 <input type="text" placeholder="검색어 입력" />
-                <button href="#" aria-label="검색"></button>
+                <button aria-label="검색"></button>
               </form>
               <a href="./login.html" class="my-page" aria-label="마이페이지"></a>
             </div>
@@ -163,6 +163,7 @@
                 </a>
               </div>
               <div class="swiper-pagination"></div>
+            </div>
           </div>
         </aside>
         <section id="bestseller">
@@ -181,6 +182,7 @@
               <div class="swiper-pagination"></div>
               <button class="swiper-button-prev type1" aria-label="이전"></button>
               <button class="swiper-button-next type1" aria-label="다음"></button>
+            </div>
           </div>
         </section>
         <section id="youtube">
@@ -299,6 +301,7 @@
                 </a>
               </li>
             </ul>
+          </div>
         </section>
       </main>
       <footer class="footer">
@@ -381,18 +384,18 @@
         </div>
       </footer>
     </div>
-    <aside class="popup">
-      <a href="#" class="web-center">
+    <aside class="popup web-center">
+      <a href="#">
         <img class="popup-img_pc show" src="./assets/images/popup_ad_pc.png" alt="초등 상위권으로 가는 국어 독해 기술 백점백승 유형 독해 출간">
         <img class="popup-img_m" src="./assets/images/popup_ad_m.png" alt="초등 상위권으로 가는 국어 독해 기술 백점백승 유형 독해 출간">
-        <span>
-          <input id="dont-show-check" type="checkbox">
-          <label for="dont-show-check">오늘하루 이창 열지 않기</label>
-        </span>
-        <button class="popup-close" aria-label="닫기">
-          <img src="./assets/images/icon_close.svg" alt="닫기">
-        </button>
       </a>
+      <span>
+        <input id="dont-show-check" type="checkbox">
+        <label for="dont-show-check">오늘하루 이창 열지 않기</label>
+      </span>
+      <button class="popup-close" aria-label="닫기">
+        <img src="./assets/images/icon_close.svg" alt="닫기">
+      </button>
     </aside>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
