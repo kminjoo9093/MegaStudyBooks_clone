@@ -3,6 +3,8 @@ import { VisualSlide } from "./Slide.js";
 
 export const RenderVisualSlide = (dataList = VisualData) => {
   const visualSlideWrap = document.querySelector(".swiper-wrapper");
+  if(!visualSlideWrap) return;
+  
   const setContents = () => {
     const slideContents = dataList
       .map(({ pcImage, moImage, description }) => {

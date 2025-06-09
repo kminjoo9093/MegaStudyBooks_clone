@@ -38,15 +38,17 @@ export const RenderPickContents = (dataList = PickData) => {
     });
     let pickContents = pickList
       .map(({ coverImage, description }) => {
-        return `<div class="swiper-slide">
-                  <a href="#" class="pick-link">
-                    <figure>
-                      <img src="./assets/images/${coverImage}" alt="" />
-                      <figcaption>${description}</figcaption>
-                    </figure>
-                    <p>${description}</p>
-                  </a>
-                </div>`;
+        return `<ul class="swiper-slide">
+                  <li>
+                    <a href="#" class="pick-link">
+                      <figure>
+                        <img src="./assets/images/${coverImage}" alt="" aria-hidden="true"/>
+                        <figcaption>${description}</figcaption>
+                      </figure>
+                      <p>${description}</p>
+                    </a>
+                  </li>
+                </ul>`;
       })
       .join("");
     pickContentsWrap.innerHTML = pickContents;

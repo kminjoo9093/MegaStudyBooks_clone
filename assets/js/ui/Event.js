@@ -13,7 +13,7 @@ export const RenderEventSlideContent = (dataList = EventData)=>{
                     <span class="badge">${badge}</span>
                     <h3 class="event-title">${title}</h3>
                     <div class="event-img">
-                      <img src="./assets/images/${image}" alt="">
+                      <img src="./assets/images/${image}" alt="" aria-hidden="true">
                     </div>
                   </a>
                 </li>`

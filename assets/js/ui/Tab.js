@@ -6,6 +6,12 @@ export const Tab = (tabWrap)=>{
   tabBtns.forEach(btn=>{
     btn.addEventListener('click', (e)=>{
       e.preventDefault();
+
+      tabBtns.forEach((btn)=>{
+        btn.setAttribute("aria-selected", "false");
+      })
+      e.currentTarget.setAttribute("aria-selected", "true");
+
       removeClass();
       addClass(btn);
     })
@@ -25,6 +31,7 @@ export const Tab = (tabWrap)=>{
   tabBtns.forEach((btn, index)=>{
     if(index === 0){
       addClass(btn);
+      btn.setAttribute("aria-selected", "true");
     }
   })
 }

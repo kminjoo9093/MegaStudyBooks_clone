@@ -99,25 +99,16 @@ header {
   }
 }
 /************** HEADER : GNB *************/
-@keyframes gnbShow {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .gnb {
   display: none;
   width: 100%;
   border-top: 0.1rem solid $gray_e5;
   box-shadow: 0 0.5rem 1rem rgba($color: #000000, $alpha: 0.1);
   background-color: #fff;
-  transition: 0.4s;
-  header.open & {
-    display: block;
-    animation: gnbShow 0.35s linear;
-  }
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
   &-wrap {
     padding-inline: 1rem;
     padding-block: 4rem;
@@ -139,7 +130,6 @@ header {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       li {
-        // min-width: calc(100% / 3);
         margin-top: 1rem;
         text-wrap: nowrap;
       }
@@ -155,7 +145,6 @@ header {
 
   // responsive gnb
   @include screenWidth($tablet) {
-    // gnb
     height: 100vh;
     &-wrap {
       flex-direction: column;
@@ -202,8 +191,6 @@ header {
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
-      // justify-content: center;
-      // align-items: end;
       width: 100%;
       aspect-ratio: 1;
       padding: 3.5rem 2rem;

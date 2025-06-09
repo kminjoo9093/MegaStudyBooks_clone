@@ -325,25 +325,16 @@ header {
 }
 
 /************** HEADER : GNB *************/
-@keyframes gnbShow {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .gnb {
   display: none;
   width: 100%;
   border-top: 0.1rem solid #E5E5E5;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  transition: 0.4s;
-}
-header.open .gnb {
-  display: block;
-  animation: gnbShow 0.35s linear;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
 }
 .gnb-wrap {
   padding-inline: 1rem;
@@ -2108,7 +2099,7 @@ header.open .nav-icons .btn-menu span:last-child {
   left: 4rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   z-index: 10;
 }
 @media (max-width: 990px) {

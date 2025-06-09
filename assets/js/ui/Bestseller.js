@@ -15,7 +15,7 @@ export const BestsellerBtn = () => {
     bestsellerSlide.style.setProperty("--btnPositionX", btnPosition);
   };
 
-  window.addEventListener('load', slideBtnPosition);
+  window.addEventListener("load", slideBtnPosition);
   window.addEventListener("resize", slideBtnPosition);
 };
 
@@ -29,14 +29,16 @@ export const RenderBestSlideContent = (dataList = BestData) => {
     });
     const slideResult = filteredList
       .map(({ coverImage, title }) => {
-        return `<div class="swiper-slide">
-                  <a href="#">
-                    <div class="best-img">
-                      <img src="./assets/images/${coverImage}" alt="">
-                    </div >
-                    <p>${title}</p>
-                  </a>
-                </div>`;
+        return `<ul class="swiper-slide">
+                  <li>
+                    <a href="#">
+                      <div class="best-img">
+                        <img src="./assets/images/${coverImage}" alt="" aria-hidden="true">
+                      </div >
+                      <p>${title}</p>
+                    </a>
+                  </li>
+                </ul>`;
       })
       .join("");
 

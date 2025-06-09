@@ -4,30 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>메가스터디북스</title>
-    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
-    <!-- fonts -->
-    <!-- <link
-      rel="stylesheet"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
-    /> -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <!-- jquery cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- swiper css cdn -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <!-- custom css -->
     <link rel="stylesheet" href="./assets/css/index.css" />
   </head>
   <body>
-    <button class="btn-quickSearch" aria-label="맞춤 도서 찾기"><i></i><span>맞춤 도서</span></button>
+    <button class="btn-quickSearch" aria-label="맞춤 도서 찾기">
+      <i></i><span>맞춤 도서</span>
+    </button>
     <div id="container">
       <header>
         <div class="header-inner">
           <div class="main-header">
             <div class="main-header-inner web-center">
               <h1 class="logo">
-                <a href="./index.html"
-                  ><img src="./assets/images/logo.svg" alt="메가스터디북스"
-                /></a>
+                <a href="./index.html"><img src="./assets/images/logo.svg" alt="메가스터디북스"/></a>
               </h1>
               <nav class="page-nav">
                 <ul>
@@ -38,9 +40,18 @@
                 </ul>
               </nav>
               <p class="nav-icons">
-                <button class="btn-search"></button>
-                <a href="./login.html" class="my-page" aria-label="마이페이지"></a>
-                <button class="btn-menu">
+                <button class="btn-search" aria-label="검색"></button>
+                <a
+                  href="./login.html"
+                  class="my-page"
+                  aria-label="마이페이지"
+                ></a>
+                <button
+                  class="btn-menu"
+                  aria-label="메뉴열기"
+                  aria-expanded="false"
+                  aria-controls="gnb"
+                >
                   <span></span>
                   <span></span>
                   <span></span>
@@ -54,11 +65,15 @@
                 <input type="text" placeholder="검색어 입력" />
                 <button aria-label="검색"></button>
               </form>
-              <a href="./login.html" class="my-page" aria-label="마이페이지"></a>
+              <a
+                href="./login.html"
+                class="my-page"
+                aria-label="마이페이지"
+              ></a>
             </div>
           </div>
         </div>
-        <nav class="gnb">
+        <nav class="gnb" id="gnb">
           <div class="gnb-wrap web-center">
             <div class="gnb-col">
               <h2><a href="#">도서</a></h2>
@@ -104,8 +119,14 @@
           <div class="visual-swiper web-center">
             <div class="swiper">
               <div class="swiper-wrapper"></div>
-              <button class="swiper-button-prev type1" aria-label="이전"></button>
-              <button class="swiper-button-next type1" aria-label="다음"></button>
+              <button
+                class="swiper-button-prev type1"
+                aria-label="이전"
+              ></button>
+              <button
+                class="swiper-button-next type1"
+                aria-label="다음"
+              ></button>
               <div class="swiper-pagination"></div>
             </div>
           </div>
@@ -114,13 +135,27 @@
           <h2 class="hide">퀵 메뉴</h2>
           <nav class="web-center">
             <ul>
-              <li><a href=""><span class="quick-icon"></span>정답 및 해설</a></li>
-              <li><a href=""><span class="quick-icon"></span>정오표</a></li>
-              <li><a href=""><span class="quick-icon"></span>듣기자료</a></li>
-              <li><a href=""><span class="quick-icon"></span>교사용 자료</a></li>
-              <li><a href=""><span class="quick-icon"></span>교사용 이북</a></li>
-              <li><a href=""><span class="quick-icon"></span>총판 안내</a></li>
-              <li><a href=""><span class="quick-icon"></span>FAQ</a></li>
+              <li>
+                <a href="#"><span class="quick-icon"></span>정답 및 해설</a>
+              </li>
+              <li>
+                <a href="#"><span class="quick-icon"></span>정오표</a>
+              </li>
+              <li>
+                <a href="#"><span class="quick-icon"></span>듣기자료</a>
+              </li>
+              <li>
+                <a href="#"><span class="quick-icon"></span>교사용 자료</a>
+              </li>
+              <li>
+                <a href="#"><span class="quick-icon"></span>교사용 이북</a>
+              </li>
+              <li>
+                <a href="#"><span class="quick-icon"></span>총판 안내</a>
+              </li>
+              <li>
+                <a href="#"><span class="quick-icon"></span>FAQ</a>
+              </li>
             </ul>
           </nav>
         </section>
@@ -132,8 +167,14 @@
                 <ul class="swiper-wrapper tab-hash"></ul>
               </div>
               <div class="swiper-controls">
-                <button class="swiper-button-prev type1" aria-label="이전"></button>
-                <button class="swiper-button-next type1" aria-label="다음"></button>
+                <button
+                  class="swiper-button-prev type1"
+                  aria-label="이전"
+                ></button>
+                <button
+                  class="swiper-button-next type1"
+                  aria-label="다음"
+                ></button>
               </div>
             </div>
             <div class="pick-slide-wrap">
@@ -141,8 +182,14 @@
                 <div class="swiper-wrapper"></div>
                 <div class="swiper-controls">
                   <div class="swiper-pagination"></div>
-                  <button class="swiper-button-prev type2" aria-label="이전"></button>
-                  <button class="swiper-button-next type2" aria-label="다음"></button>
+                  <button
+                    class="swiper-button-prev type2"
+                    aria-label="이전"
+                  ></button>
+                  <button
+                    class="swiper-button-next type2"
+                    aria-label="다음"
+                  ></button>
                 </div>
               </div>
             </div>
@@ -154,12 +201,28 @@
             <div class="swiper banner-swiper">
               <div class="swiper-wrapper">
                 <a href="#" class="swiper-slide">
-                  <img class="banner-img-pc" src="./assets/images/banner_1.png" alt="메가스터디북스 이북 오픈">
-                  <img class="banner-img-m" src="./assets/images/banner_m_1.png" alt="메가스터디북스 이북 오픈">
+                  <img
+                    class="banner-img-pc"
+                    src="./assets/images/banner_1.png"
+                    alt="메가스터디북스 이북 오픈"
+                  />
+                  <img
+                    class="banner-img-m"
+                    src="./assets/images/banner_m_1.png"
+                    alt="메가스터디북스 이북 오픈"
+                  />
                 </a>
                 <a href="#" class="swiper-slide">
-                  <img class="banner-img-pc" src="./assets/images/banner_2.png" alt="우리 아이의 문해력은 몇 점? 초등 문해력 진단 테스트">
-                  <img class="banner-img-m" src="./assets/images/banner_m_2.png" alt="우리 아이의 문해력은 몇 점? 초등 문해력 진단 테스트">
+                  <img
+                    class="banner-img-pc"
+                    src="./assets/images/banner_2.png"
+                    alt="우리 아이의 문해력은 몇 점? 초등 문해력 진단 테스트"
+                  />
+                  <img
+                    class="banner-img-m"
+                    src="./assets/images/banner_m_2.png"
+                    alt="우리 아이의 문해력은 몇 점? 초등 문해력 진단 테스트"
+                  />
                 </a>
               </div>
               <div class="swiper-pagination"></div>
@@ -180,60 +243,108 @@
             <div class="swiper bestseller-swiper">
               <div class="swiper-wrapper"></div>
               <div class="swiper-pagination"></div>
-              <button class="swiper-button-prev type1" aria-label="이전"></button>
-              <button class="swiper-button-next type1" aria-label="다음"></button>
+              <button
+                class="swiper-button-prev type1"
+                aria-label="이전"
+              ></button>
+              <button
+                class="swiper-button-next type1"
+                aria-label="다음"
+              ></button>
             </div>
           </div>
         </section>
         <section id="youtube">
           <div class="web-center">
-              <div class="heading">
-                <h2 class="heading-title">메가스터디북스 유튜브</h2>
-                <div class="swiper-controls">
-                  <button class="swiper-button-prev type2" aria-label="이전"></button>
-                  <button class="swiper-button-next type2" aria-label="다음"></button>
-                </div>
+            <div class="heading">
+              <h2 class="heading-title">메가스터디북스 유튜브</h2>
+              <div class="swiper-controls">
+                <button
+                  class="swiper-button-prev type2"
+                  aria-label="이전"
+                ></button>
+                <button
+                  class="swiper-button-next type2"
+                  aria-label="다음"
+                ></button>
               </div>
-              <div class="swiper youtube-swiper">
-                <ul class="swiper-wrapper">
-                  <li class="swiper-slide">
-                    <a href="https://www.youtube.com/watch?v=AuypX2i1fk4" target="_blank">
-                      <img src="./assets/images/youtube_1.jpg" alt="미술관에 가고 싶어졌습니다 도슨트 김찬용의 미술관 사용법">
-                    </a>
-                  </li>
-                  <li class="swiper-slide">
-                    <a href="https://www.youtube.com/watch?v=nOf1Bw77B1c" target="_blank">
-                      <img src="./assets/images/youtube_2.jpg" alt="하와이 대저택과 함께하는 100일 미라클 챌린지 완주자 초청 북토크">
-                    </a>
-                  </li>
-                  <li class="swiper-slide">
-                    <a href="https://www.youtube.com/watch?v=Px8rpz7H0wg" target="_blank">
-                      <img src="./assets/images/youtube_3.jpg" alt="초등 문법 공부 가이드 초등 문법 이렇게 진행하세요">
-                    </a>
-                  </li>
-                  <li class="swiper-slide">
-                    <a href="https://www.youtube.com/watch?v=MqwhQkSCQNw" target="_blank">
-                      <img src="./assets/images/youtube_4.png" alt="학년이 올라갈수록 공부 잘 하는 아이들의 특징">
-                    </a>
-                  </li>
-                  <li class="swiper-slide">
-                    <a href="https://www.youtube.com/watch?v=C4wBorKl9rI" target="_blank">
-                      <img src="./assets/images/youtube_5.png" alt="메가스터디 수능 영어 대표강사 조정식 영어 기출서 고르는 기준 딱 정해드립니다">
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <button class="btn-more">더보기</button>
+            </div>
+            <div class="swiper youtube-swiper">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                  <a
+                    href="https://www.youtube.com/watch?v=AuypX2i1fk4"
+                    target="_blank"
+                  >
+                    <img
+                      src="./assets/images/youtube_1.jpg"
+                      alt="미술관에 가고 싶어졌습니다 도슨트 김찬용의 미술관 사용법"
+                    />
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a
+                    href="https://www.youtube.com/watch?v=nOf1Bw77B1c"
+                    target="_blank"
+                  >
+                    <img
+                      src="./assets/images/youtube_2.jpg"
+                      alt="하와이 대저택과 함께하는 100일 미라클 챌린지 완주자 초청 북토크"
+                    />
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a
+                    href="https://www.youtube.com/watch?v=Px8rpz7H0wg"
+                    target="_blank"
+                  >
+                    <img
+                      src="./assets/images/youtube_3.jpg"
+                      alt="초등 문법 공부 가이드 초등 문법 이렇게 진행하세요"
+                    />
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a
+                    href="https://www.youtube.com/watch?v=MqwhQkSCQNw"
+                    target="_blank"
+                  >
+                    <img
+                      src="./assets/images/youtube_4.png"
+                      alt="학년이 올라갈수록 공부 잘 하는 아이들의 특징"
+                    />
+                  </a>
+                </li>
+                <li class="swiper-slide">
+                  <a
+                    href="https://www.youtube.com/watch?v=C4wBorKl9rI"
+                    target="_blank"
+                  >
+                    <img
+                      src="./assets/images/youtube_5.png"
+                      alt="메가스터디 수능 영어 대표강사 조정식 영어 기출서 고르는 기준 딱 정해드립니다"
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <button class="btn-more">더보기</button>
           </div>
         </section>
         <section id="event">
           <div class="web-center">
             <div class="heading">
               <h2 class="heading-title">이벤트</h2>
-              <a href="">View more</a>
+              <a href="#">View more</a>
               <div class="swiper-controls">
-                <button class="swiper-button-prev type1" aria-label="이전"></button>
-                <button class="swiper-button-next type1" aria-label="다음"></button>
+                <button
+                  class="swiper-button-prev type1"
+                  aria-label="이전"
+                ></button>
+                <button
+                  class="swiper-button-next type1"
+                  aria-label="다음"
+                ></button>
               </div>
             </div>
             <div class="swiper event-swiper">
@@ -272,31 +383,43 @@
             <ul class="board">
               <li>
                 <a href="#">
-                  <img src="./assets/images/icon-insta.svg" alt="메가스터디북스 인스타그램">
+                  <img
+                    src="./assets/images/icon-insta.svg"
+                    alt="메가스터디북스 인스타그램"
+                  />
                   <h3>메가스터디북스</h3>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img src="./assets/images/icon-insta.svg" alt="메가맘 인스타그램">
+                  <img
+                    src="./assets/images/icon-insta.svg"
+                    alt="메가맘 인스타그램"
+                  />
                   <h3>메가맘</h3>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img src="./assets/images/icon-insta.svg" alt="메가책방 인스타그램">
+                  <img
+                    src="./assets/images/icon-insta.svg"
+                    alt="메가책방 인스타그램"
+                  />
                   <h3>메가책방</h3>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img src="./assets/images/icon-youtube.svg" alt="메가스터디북스 유튜브">
+                  <img
+                    src="./assets/images/icon-youtube.svg"
+                    alt="메가스터디북스 유튜브"
+                  />
                   <h3>메가스터디북스</h3>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img src="./assets/images/icon-ncafe.svg" alt="메가맘 카페">
+                  <img src="./assets/images/icon-ncafe.svg" alt="메가맘 카페" />
                   <h3>메가맘</h3>
                 </a>
               </li>
@@ -320,36 +443,74 @@
             </nav>
             <div class="link-wrap">
               <ul class="sns">
-                <li><a href="#" class="icon-insta" target="_blank" aria-label="메가스터디북스 인스타그램" title="메가스터디북스"></a></li>
-                <li><a href="#" class="icon-insta" target="_blank" aria-label="메가맘 인스타그램" title="메가맘"></a></li>
-                <li><a href="#" class="icon-insta" target="_blank" aria-label="메가책방 인스타그램" title="메가책방"></a></li>
-                <li><a href="#" class="icon-youtube" target="_blank" aria-label="메가스터디북스 유튜브" title="메가스터디북스"></a></li>
-                <li><a href="#" class="icon-ncafe" target="_blank" aria-label="메가맘 네이버 카페" title="메가맘"></a></li>
+                <li>
+                  <a
+                    href="#"
+                    class="icon-insta"
+                    target="_blank"
+                    aria-label="메가스터디북스 인스타그램"
+                    title="메가스터디북스"
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="icon-insta"
+                    target="_blank"
+                    aria-label="메가맘 인스타그램"
+                    title="메가맘"
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="icon-insta"
+                    target="_blank"
+                    aria-label="메가책방 인스타그램"
+                    title="메가책방"
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="icon-youtube"
+                    target="_blank"
+                    aria-label="메가스터디북스 유튜브"
+                    title="메가스터디북스"
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="icon-ncafe"
+                    target="_blank"
+                    aria-label="메가맘 네이버 카페"
+                    title="메가맘"
+                  ></a>
+                </li>
               </ul>
               <div class="family">
-                <button class="btn-family">
-                  Family site
-                </button>
+                <button class="btn-family">Family site</button>
                 <dialog class="family-list">
                   <ul>
-                    <li><a href="">메가MD</a></li>
-                    <li><a href="">메가로스쿨</a></li>
-                    <li><a href="">메가로이어스</a></li>
-                    <li><a href="">메가랜드</a></li>
-                    <li><a href="">메가변리사</a></li>
-                    <li><a href="">메가원격평생교육원</a></li>
-                    <li><a href="">메가미래평생교육원</a></li>
-                    <li><a href="">메가BMC</a></li>
-                    <li><a href="">메가스터디</a></li>
-                    <li><a href="">엘리하이</a></li>
-                    <li><a href="">엠베스트</a></li>
-                    <li><a href="">메가공무원</a></li>
-                    <li><a href="">메가스터디학원</a></li>
-                    <li><a href="">메가러셀</a></li>
-                    <li><a href="">김영편입</a></li>
-                    <li><a href="">더조은</a></li>
-                    <li><a href="">메가스터디아카데미</a></li>
-                    <li><a href="">잇츠리얼타임</a></li>
+                    <li><a href="#">메가MD</a></li>
+                    <li><a href="#">메가로스쿨</a></li>
+                    <li><a href="#">메가로이어스</a></li>
+                    <li><a href="#">메가랜드</a></li>
+                    <li><a href="#">메가변리사</a></li>
+                    <li><a href="#">메가원격평생교육원</a></li>
+                    <li><a href="#">메가미래평생교육원</a></li>
+                    <li><a href="#">메가BMC</a></li>
+                    <li><a href="#">메가스터디</a></li>
+                    <li><a href="#">엘리하이</a></li>
+                    <li><a href="#">엠베스트</a></li>
+                    <li><a href="#">메가공무원</a></li>
+                    <li><a href="#">메가스터디학원</a></li>
+                    <li><a href="#">메가러셀</a></li>
+                    <li><a href="#">김영편입</a></li>
+                    <li><a href="#">더조은</a></li>
+                    <li><a href="#">메가스터디아카데미</a></li>
+                    <li><a href="#">잇츠리얼타임</a></li>
                   </ul>
                 </dialog>
               </div>
@@ -378,7 +539,9 @@
                   <span>고객센터 : 1661-5431</span>
                 </p>
               </div>
-              <div class="copyright">Copyright ⓒ Megastudy, All rights reserved.</div>
+              <div class="copyright">
+                Copyright ⓒ Megastudy, All rights reserved.
+              </div>
             </div>
           </div>
         </div>
@@ -386,15 +549,23 @@
     </div>
     <aside class="popup web-center">
       <a href="#">
-        <img class="popup-img_pc show" src="./assets/images/popup_ad_pc.png" alt="초등 상위권으로 가는 국어 독해 기술 백점백승 유형 독해 출간">
-        <img class="popup-img_m" src="./assets/images/popup_ad_m.png" alt="초등 상위권으로 가는 국어 독해 기술 백점백승 유형 독해 출간">
+        <img
+          class="popup-img_pc show"
+          src="./assets/images/popup_ad_pc.png"
+          alt="초등 상위권으로 가는 국어 독해 기술 백점백승 유형 독해 출간"
+        />
+        <img
+          class="popup-img_m"
+          src="./assets/images/popup_ad_m.png"
+          alt="초등 상위권으로 가는 국어 독해 기술 백점백승 유형 독해 출간"
+        />
       </a>
       <span>
-        <input id="dont-show-check" type="checkbox">
+        <input id="dont-show-check" type="checkbox" />
         <label for="dont-show-check">오늘하루 이창 열지 않기</label>
       </span>
       <button class="popup-close" aria-label="닫기">
-        <img src="./assets/images/icon_close.svg" alt="닫기">
+        <img src="./assets/images/icon_close.svg" alt="닫기" />
       </button>
     </aside>
 

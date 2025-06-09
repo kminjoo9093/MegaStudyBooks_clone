@@ -1,8 +1,10 @@
-export const HandleMenuBtn = ()=>{
-  const header = document.querySelector('header')
-  const menuBtn = document.querySelector('.btn-menu');
+import { handleExpanded } from "./handleExpanded.js";
 
-  menuBtn.addEventListener('click', ()=>{
-    header.classList.toggle('open');
+export const HandleMenuBtn = ()=>{
+  $('header .btn-menu').click(function(){
+    $('header').toggleClass('open');
+    $('.gnb').stop().fadeToggle();
   })
+
+  handleExpanded('header .btn-menu');
 }
