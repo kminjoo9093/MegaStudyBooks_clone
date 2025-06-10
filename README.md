@@ -2,7 +2,7 @@
 
 <br>
 메인페이지와 로그인 페이지 반응형 웹사이트 <br><br>
-제작기간 : 2025.03
+제작시기 : 2025.03
 
 <br><br>
 link : https://kminjoo9093.github.io/MegaStudyBooks_clone/
