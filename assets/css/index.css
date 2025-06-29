@@ -1188,16 +1188,16 @@ footer .copyright {
     padding-bottom: 4rem;
   }
 }
-#signin .login-box label[for=id],
-#signin .login-box label[for=pw] {
+#signin .login-box label[for=userId],
+#signin .login-box label[for=userPw] {
   display: block;
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 2.4rem;
 }
 @media (max-width: 990px) {
-  #signin .login-box label[for=id],
-  #signin .login-box label[for=pw] {
+  #signin .login-box label[for=userId],
+  #signin .login-box label[for=userPw] {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
   }

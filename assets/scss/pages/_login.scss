@@ -63,8 +63,8 @@
     @include screenWidth($tablet_s) {
       padding-bottom: 4rem;
     }
-    label[for="id"],
-    label[for="pw"] {
+    label[for="userId"],
+    label[for="userPw"] {
       display: block;
       font-size: 1.6rem;
       font-weight: 600;
